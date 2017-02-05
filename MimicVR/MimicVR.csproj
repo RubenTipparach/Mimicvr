@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\MoveCar.cs" />
+    <Compile Include="Assets\MoveCarTracker.cs" />
     <Compile Include="Assets\OVR\Scripts\OVRBoundary.cs" />
     <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
     <Compile Include="Assets\OVR\Scripts\OVRCommon.cs" />
@@ -320,6 +321,7 @@
     <Compile Include="Assets\VRTK\Scripts\VRTK_TeleportDisableOnHeadsetCollision.cs" />
     <Compile Include="Assets\VRTK\Scripts\VRTK_TouchpadWalking.cs" />
     <Compile Include="Assets\VRTK\Scripts\VRTK_UIPointer.cs" />
+    <Compile Include="Assets\ViveRemoteController.cs" />
     <Compile Include="Assets\_ImmerseumSDK\1_Scripts\ControllerManager.cs" />
     <Compile Include="Assets\_ImmerseumSDK\1_Scripts\EventManager.cs" />
     <Compile Include="Assets\_ImmerseumSDK\1_Scripts\Exceptions\PackageNotFoundException.cs" />
