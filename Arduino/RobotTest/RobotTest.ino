@@ -1,6 +1,6 @@
 #include <IRremote.h>
 
-int receiverpin = 12;
+int receiverPin = 12;
 
 int ENA = 10;
 int ENB = 5;
@@ -23,7 +23,7 @@ unsigned long RED;
 #define C 16720605
 #define D 16761405
 
-IRrecv irrecv(receiverpin);
+IRrecv irrecv(receiverPin);
 decode_results results;
 
 // move forward
@@ -60,8 +60,22 @@ void setup() {
   // put your setup code here, to run once:
   pinMode(IN1, OUTPUT);
   pinMode(IN2, OUTPUT);
+  pinMode(IN3, OUTPUT);
+  pinMode(IN4, OUTPUT);
   pinMode(ENA, OUTPUT);
-  digitalWrite(ENA,HIGH);
+  pinMode(ENB, OUTPUT);
+  pinMode(receiverPin, INPUT);
+  Serial.begin(9600);
+  _mStop();
+  irrecv.enableIRIn();
+  //digitalWrite(ENA,HIGH);
+}
+
+void _mStop()
+{
+  digitalWrite(ENA, LOW);
+  digitalWrite(ENB, LOW);
+  Serial.println("Stop!");
 }
 
 void loop() {
@@ -82,4 +96,28 @@ void loop() {
   // digitalWrite(IN1,LOW);
   // digitalWrite(IN2,LOW); // right wheel stop 
   // delay(500);
+
+  if(irrecv.decode(&results))
+  {
+    RED = results.value;
+    Serial.println(RED);
+    irrecv.resume();
+    delay(150);
+    
+    if(RED == A)
+    {
+      _mForward();
+    }
+  
+    if(RED == B)
+    {
+      _mBack();
+    }
+  
+    if(RED == X)
+    {
+      _mStop();
+    }
+  }
 }
+
