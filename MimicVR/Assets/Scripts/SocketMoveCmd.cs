@@ -4,7 +4,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SocketMoveCmd : MonoBehaviour {
+public interface RobotCommandInput
+{
+	void Forward();
+
+	void Backward();
+
+	void Left();
+
+	void Right();
+
+	void Stop();
+}
+
+public class SocketMoveCmd : MonoBehaviour, RobotCommandInput
+{
 
 	// Use JSON objects for serialization!
 	[SerializeField]
@@ -48,7 +62,33 @@ public class SocketMoveCmd : MonoBehaviour {
         }
 	}
 
-	void RobotCommand(string input)
+
+	public void Forward()
+	{
+		RobotCommand("f");
+	}
+
+	public void Backward()
+	{
+		RobotCommand("b");
+	}
+
+	public void Left()
+	{
+		RobotCommand("l");
+	}
+
+	public void Right()
+	{
+		RobotCommand("r");
+	}
+
+	public void Stop()
+	{
+		RobotCommand("s");
+	}
+
+	private void RobotCommand(string input)
 	{
 		//input = string.Format("{{ \"command\" : \"{0}\" }}", input);
         Debug.Log("input: " + input);

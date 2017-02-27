@@ -148,15 +148,7 @@ public class SteamVR_Controller
 				devices[i] = new Device(i);
 		}
 
-		if (devices != null && deviceIndex != -1)
-		{
-			return devices[deviceIndex];
-
-		}
-		else
-		{
-			return null;
-		}
+		return devices[deviceIndex];
 	}
 
 	public static void Update()
