@@ -39,9 +39,11 @@
 	\section{Background}
 	In the past, robots used various techniques for tracking and motion sensors such as line tracking, IMU(Inertia Measurement Unity), ultra sonic, and various methods for sampling points with depth. One of the biggest challenges of positional tracking is that the positional coordinates of each tracked object is best used in relation to another object, it becomes difficult for the tracked object to work on it's own by only sensing the environment.
 	\\
-	In GPS technology, an array of satellites orbit the earth to help triangulate a position in a 3D spatial coordinate system using the time differences each satellite is from the center point. For a very long time, the few feet of inaccuracy was tolerated for large scale navigation (moving over vast distances of miles). However, when it comes to tracking at the finer scale, the human scale, we cannot use GPS for close range, high precision tracking.
+	In GPS technology, an array of satellites orbit the earth to help triangulate a position in a 3D spatial coordinate system using the time differences each satellite is from the center point \cite{gizmodo1}. For a very long time, the few feet of inaccuracy was tolerated for large scale navigation (moving over vast distances of miles). However, when it comes to tracking at the finer scale, the human scale, we cannot use GPS for close range, high precision tracking.
 	\\
-	The HTC Vive, released in April 2016, provides room scale tracking with high accuracy. Mainly used for Virtual Reality, this project will utilize this advantage to harness that accuracy into encoding instructions and providing robots with human like tasks. Upon solving the issues of precision, simulations can be designed and algorithms can be tested all using the virtual space.
+	The HTC Vive, released in April 2016 \cite{techradar1}, provides room scale tracking with high accuracy. Mainly used for Virtual Reality, this project will utilize this advantage to harness that accuracy into encoding instructions and providing robots with human like tasks. Upon solving the issues of precision, simulations can be designed and algorithms can be tested all using the virtual space.
+	\\
+	In addition to high accuracy tracking, VR also allows for a safe and cost effective space for testing out various situations for robotic behaviors. An example of this maybe in a hazardous environment\cite{Bugalia} with lethal radiation or a potential bomb threat\cite{Codd-Downey}. This main reason alone, combined with certain time critical tasks can utilize the power of VR not only to simulate, but allow operators to interface with the robot in realtime in a safe environment. Long past are the days of joystick controls for operating analog robots. With the advent of VR controls, robots not only mimic human behavior but can actually learn to do better than their human counter parts and in turn, humans can learn from those robots as well.
 	
 	\section{Methodology}
 	This study examines the use of VR as an interface tool for robotics. The main question here is, how can Virtual Reality technology be used to augment the simulation and command of physical robots? The environment will be set up in Unity with the SteamVR software installed. It is also using the VR toolkit from the Unity asset store which is free.
@@ -68,6 +70,18 @@
 	\begin{thebibliography}{99}
 		
 		\bibitem{hack1}{Cameron Coward, ''HTC Vive Gives Autonomous Robots Direction'',\url{http://hackaday.com/2016/08/23/htc-vive-gives-autonomous-robots-direction/},2016.}
+		
+			
+		\bibitem{gizmodo1}{Sean Buckley, ''This Is How Valve?s Amazing Lighthouse Tracking Technology Works'',\url{http://gizmodo.com/this-is-how-valve-s-amazing-lighthouse-tracking-technol-1705356768},2016.}
+		
+	
+		\bibitem{techradar1}{Jon Porter, ''This Is How Valve?s Amazing Lighthouse Tracking Technology Works'',\url{http://www.techradar.com/news/htc-vive-2-release-date-news-and-rumors}, 2017.}
+		
+		\bibitem{Bugalia}{Nishant Bugalia et. al., ''Immersive environment for robotic tele-operations'', 2015.}
+		
+		
+		\bibitem{Codd-Downey}{Robert Codd-Downey and Michael Jenkin, ''Crime Scene Robot and Sensor Simulation'', 2009.}
+		
 		
 	\end{thebibliography}
 \end{document}
