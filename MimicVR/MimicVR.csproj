@@ -108,6 +108,7 @@
     <Compile Include="Assets\Scripts\CarControllerBehavior\GoAroundInACircle.cs" />
     <Compile Include="Assets\Scripts\CarControllerBehavior\MoveToController.cs" />
     <Compile Include="Assets\Scripts\Dan\LinearMove.cs" />
+    <Compile Include="Assets\Scripts\DegreeThing.cs" />
     <Compile Include="Assets\Scripts\LocalMoveCmd.cs" />
     <Compile Include="Assets\Scripts\MoveCar.cs" />
     <Compile Include="Assets\Scripts\MoveCarTracker.cs" />
