@@ -21,12 +21,12 @@ public class PID
     {
     }
 
-    public PID(float pFactor, float iFactor, float dFactor)
-	{
-		this.pFactor = pFactor;
-		this.iFactor = iFactor;
-		this.dFactor = dFactor;
-	}
+ //   public PID(float pFactor, float iFactor, float dFactor)
+	//{
+	//	this.pFactor = pFactor;
+	//	this.iFactor = iFactor;
+	//	this.dFactor = dFactor;
+	//}
 
 
 	public float Update(float setpoint, float actual, float timeFrame)
