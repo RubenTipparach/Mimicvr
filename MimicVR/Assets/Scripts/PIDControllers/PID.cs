@@ -11,13 +11,17 @@ using UnityEngine;
 [Serializable]
 public class PID
 {
+    // Can also be set externally.
 	public float pFactor, iFactor, dFactor;
 
 	float integral;
 	float lastError;
 
+    public PID()
+    {
+    }
 
-	public PID(float pFactor, float iFactor, float dFactor)
+    public PID(float pFactor, float iFactor, float dFactor)
 	{
 		this.pFactor = pFactor;
 		this.iFactor = iFactor;
