@@ -103,6 +103,7 @@
     <Compile Include="Assets\OVR\Scripts\Util\OVRSceneSampleController.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
     <Compile Include="Assets\OVR\Scripts\Util\OVRWaitCursor.cs" />
+    <Compile Include="Assets\Scripts\AbstractMoveCarBehavior.cs" />
     <Compile Include="Assets\Scripts\Analysis\DirectionalDisplay.cs" />
     <Compile Include="Assets\Scripts\Analysis\RotationMeasure.cs" />
     <Compile Include="Assets\Scripts\CarControllerBehavior\GoAroundInACircle.cs" />
@@ -116,6 +117,7 @@
     <Compile Include="Assets\Scripts\PIDControllers\ImpulsePIDDriver.cs" />
     <Compile Include="Assets\Scripts\PIDControllers\PID.cs" />
     <Compile Include="Assets\Scripts\PIDControllers\PIDV.cs" />
+    <Compile Include="Assets\Scripts\PIDControllers\ShipControllerAngularPID.cs" />
     <Compile Include="Assets\Scripts\PIDSubclass\RotationPID.cs" />
     <Compile Include="Assets\Scripts\SocketMoveCmd.cs" />
     <Compile Include="Assets\Scripts\ViveRemoteController.cs" />

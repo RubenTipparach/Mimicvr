@@ -6,7 +6,7 @@ using UnityEngine;
 public class DirectionalDisplay : MonoBehaviour {
 
 	[SerializeField]
-	Transform target;
+	public Transform target;
 
 	// Use this for initialization
 	void Start () {

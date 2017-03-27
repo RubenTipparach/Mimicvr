@@ -24,7 +24,7 @@ public class GoAroundInACircle : MonoBehaviour {
 			moveCmd = local;
 		}
 
-		StartCoroutine(startDelay(0));
+		//StartCoroutine(startDelay(0));
     }
 
 	IEnumerator startDelay(float waitTime)
