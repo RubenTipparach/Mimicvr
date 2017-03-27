@@ -11,25 +11,33 @@ using UnityEngine;
 [Serializable]
 public class PID
 {
+    // Can also be set externally.
 	public float pFactor, iFactor, dFactor;
 
 	float integral;
 	float lastError;
 
+    public PID()
+    {
+    }
 
-	public PID(float pFactor, float iFactor, float dFactor)
-	{
-		this.pFactor = pFactor;
-		this.iFactor = iFactor;
-		this.dFactor = dFactor;
-	}
+    //   public PID(float pFactor, float iFactor, float dFactor)
+    //{
+    //	this.pFactor = pFactor;
+    //	this.iFactor = iFactor;
+    //	this.dFactor = dFactor;
+    //}
 
+
+    public float displayPresent;
 
 	public float Update(float setpoint, float actual, float timeFrame)
 	{
 		float present = setpoint - actual;
 
-		integral += present * timeFrame;
+        displayPresent = present;
+
+        integral += present * timeFrame;
 
 		float deriv = (present - lastError) / timeFrame;
 
