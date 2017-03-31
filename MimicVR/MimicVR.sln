@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
+# Visual Studio 2015
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MimicVR", "MimicVR.csproj", "{360FDD62-FE60-8CB5-595D-F33F2678A0B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MimicVR.Editor", "MimicVR.Editor.csproj", "{2BF8EF05-DFD5-B349-46B2-F9A015C713A1}"

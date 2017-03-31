@@ -19,7 +19,15 @@ public class DegreeThing : MonoBehaviour {
     float startingTime = 0;
     float endingTime = 0;
     float howLong = 0;
-    float rotation = 180;
+    float rotation = 90;
+    float average = 0;
+    int count = 0;
+    int maxCount = 20;
+    float totalSec = 0;
+    Boolean isOn = false;
+    float firstDegree = 0;
+    float secondDegree = 0;
+    float howFar = 0;
 
     [SerializeField]
     Transform target;
@@ -27,10 +35,11 @@ public class DegreeThing : MonoBehaviour {
     public void getDegree()
     {
         if (transform.rotation.eulerAngles.y > -0.1)
-            currentDegree = transform.rotation.eulerAngles.y - startingDegree;
+            currentDegree = transform.rotation.eulerAngles.y;
         else
-            currentDegree = Mathf.Abs(transform.rotation.eulerAngles.y) + 180 - startingDegree;
+            currentDegree = Mathf.Abs(transform.rotation.eulerAngles.y) + 180;
     }
+
 
 	// Use this for initialization
 	void Start ()
@@ -45,44 +54,81 @@ public class DegreeThing : MonoBehaviour {
             moveCmd = local;
         }
 
-        moveCmd.Left();
+        moveCmd.Right();
     }
 
     // Update is called once per frame
     void Update()
     {
-
         // PID controller might work best here, but you can start with this.
         // Also what is our destination?
-
-        if (currentDegree%rotation >= rotation-3 || currentDegree%rotation <= 3)
-        { 
-            endingTime = Environment.TickCount;
-            startingDegree = currentDegree;
-        }
-
-        getDegree();
-
-        if (endingTime > 1)
+        if (count < maxCount)
         {
-            howLong = endingTime - startingTime;
-            if (howLong > 100)
+            if (currentDegree % rotation >= rotation - 3 || currentDegree % rotation <= 3)
             {
-                startingTime = Environment.TickCount;
-                endingTime = 0;
-                print("Rotation speed is " + rotation + " degrees per " + howLong + " milliseconds.");
+                endingTime = Environment.TickCount;
             }
+
+            getDegree();
+
+            if (endingTime > 1)
+            {
+                howLong = endingTime - startingTime;
+                if (howLong > 75)
+                {
+                    startingTime = Environment.TickCount;
+                    endingTime = 0;
+                    count++;
+                    totalSec += howLong;
+                    average = totalSec / count;
+                    print("Avarage time to rotate " + rotation + "degree is " + average + " milliseconds.");
+                }
+            }
+            moveCmd.Right();
+        }
+        else if (count == maxCount)
+        {
+            moveCmd.Stop();
+            count++;
         }
 
-        if (Mathf.Sign(rotation) == -1.0f)
+        if (isOn)
         {
-            StartCoroutine(moveAction(moveCmd.Left, howLong));
-        }
-        else
-        {
-            StartCoroutine(moveAction(moveCmd.Right, howLong));
+            moveCmd.Right();
+            getDegree();
+            secondDegree = currentDegree;
+            if (firstDegree >= 270)
+            {
+                howFar = Math.Abs(firstDegree - 360);
+                if (secondDegree > howFar && secondDegree < 90)
+                {
+                    isOn = false;
+                    moveCmd.Stop();
+                }
+            }
+            else
+            {
+                howFar = firstDegree + rotation;
+                if (secondDegree > howFar)
+                {
+                    isOn = false;
+                    moveCmd.Stop();
+                }
+            }
+
         }
 
+         if (count > maxCount)
+         {
+            if (Input.GetKeyUp("f"))
+            {
+                getDegree();
+                firstDegree = currentDegree;
+                isOn = true;
+                print("done.");
+            }
+
+         }
 
     }
 
