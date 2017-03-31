@@ -1435,7 +1435,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: fdeb5b2572191cc48b5c6281960b4519, type: 2}
+  - {fileID: 2100000, guid: f5a180e78cba3b64d9cffa9c458a391d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4657,7 +4657,7 @@ GameObject:
   - component: {fileID: 1625069472}
   - component: {fileID: 1625069471}
   m_Layer: 0
-  m_Name: Car_LocalGame (1)
+  m_Name: Car_LocalGame_ruben
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4683,6 +4683,12 @@ MonoBehaviour:
     dFactor: 10
     displayPresent: 0
   showingPidResult: 0
+  directionDisp: {fileID: 0}
+  currentAngle: 0
+  targetAngle: 0
+  angleSpeed: 0
+  maxAcceleration: 180
+  maxAngularSpeed: 90
 --- !u!114 &1625069472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4948,6 +4954,12 @@ MonoBehaviour:
     dFactor: 0
     displayPresent: 0
   showingPidResult: 0
+  directionDisp: {fileID: 0}
+  currentAngle: 0
+  targetAngle: 0
+  angleSpeed: 0
+  maxAcceleration: 180
+  maxAngularSpeed: 90
 --- !u!114 &1689403530
 MonoBehaviour:
   m_ObjectHideFlags: 0

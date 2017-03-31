@@ -118,6 +118,7 @@
     <Compile Include="Assets\Scripts\PIDControllers\PID.cs" />
     <Compile Include="Assets\Scripts\PIDControllers\PIDV.cs" />
     <Compile Include="Assets\Scripts\PIDControllers\ShipControllerAngularPID.cs" />
+    <Compile Include="Assets\Scripts\PIDControllers\SimpleRotate.cs" />
     <Compile Include="Assets\Scripts\PIDSubclass\RotationPID.cs" />
     <Compile Include="Assets\Scripts\SocketMoveCmd.cs" />
     <Compile Include="Assets\Scripts\ViveRemoteController.cs" />
