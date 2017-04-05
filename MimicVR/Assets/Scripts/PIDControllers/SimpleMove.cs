@@ -11,9 +11,9 @@ public class SimpleMove : AbstractMoveCarBehavior {
 
     SimpleRotate rotationController;
 
-
     float distanceToTarget = 0;
 
+    [SerializeField]
     float distanceBias = .1f;
 
 	// Update is called once per frame
