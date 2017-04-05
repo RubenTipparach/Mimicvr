@@ -16,8 +16,43 @@ public class SimpleMove : AbstractMoveCarBehavior {
     [SerializeField]
     float distanceBias = .1f;
 
-	// Update is called once per frame
-	void Update () {
+    [SerializeField]
+    bool runWithUpdate = false;
+
+    [SerializeField]
+    float runInterval = .2f;
+
+    // initialize, but does nothing right now.
+    public override void cStart()
+    {
+        rotationController = GetComponent<SimpleRotate>();
+
+        if(!runWithUpdate)
+        {
+            StartCoroutine(run(runInterval));
+        }
+    }
+
+    IEnumerator run(float waitTime)
+    {
+        yield return new WaitForSeconds(5);
+
+        while (true)
+        {
+            yield return new WaitForSeconds(waitTime);
+            autoUpdate();
+        }
+    }
+
+    // Update is called once per frame
+    void Update () {
+
+        if(runWithUpdate) autoUpdate();
+    }
+
+    // avoid spamming the system!
+    void autoUpdate()
+    {
         CalculateDistFromDirection();
 
         //TODO: bias
@@ -46,9 +81,5 @@ public class SimpleMove : AbstractMoveCarBehavior {
         //Debug.Log(string.Format("relativeDistance: {0}", distanceToTarget));
     }
 
-    // initialize, but does nothing right now.
-    public override void cStart()
-    {
-        rotationController = GetComponent<SimpleRotate>();
-    }
+
 }

@@ -19,6 +19,12 @@ public class SimpleRotate : AbstractMoveCarBehavior
 
     bool turning = false;
 
+    [SerializeField]
+    bool runWithUpdate = false;
+
+    [SerializeField]
+    float runInterval = .2f;
+
     public bool Turning
     {
         get
@@ -27,12 +33,25 @@ public class SimpleRotate : AbstractMoveCarBehavior
         }
     }
 
-
     // Use this for initialization
     public override void cStart()
     {
+        if (!runWithUpdate)
+        {
+            StartCoroutine(run(runInterval));
+        }
     }
 
+    IEnumerator run(float waitTime)
+    {
+        yield return new WaitForSeconds(5);
+
+        while (true)
+        {
+            yield return new WaitForSeconds(waitTime);
+            autoUpdate();
+        }
+    }
 
     void getNewAngleoffset()
     {
@@ -46,6 +65,12 @@ public class SimpleRotate : AbstractMoveCarBehavior
 
     // Update is called once per frame
     void Update () {
+        if (runWithUpdate) autoUpdate();
+    }
+
+    // avoid spamming the system!
+    void autoUpdate()
+    {
         // TODO: throttle this code.
 
         getNewAngleoffset();
