@@ -8,11 +8,24 @@ public class SimpleRotate : AbstractMoveCarBehavior
     [SerializeField]
     float currentAngle;
 
+    [SerializeField]
+    float angleBias = .01f;
+
     public float targetAngle = 0;
     Vector3 rotationTarget = Vector3.zero;
 
     [SerializeField]
     DirectionalDisplay directionDisp;
+
+    bool turning = false;
+
+    public bool Turning
+    {
+        get
+        {
+            return turning;
+        }
+    }
 
 
     // Use this for initialization
@@ -27,25 +40,43 @@ public class SimpleRotate : AbstractMoveCarBehavior
         rotationTarget = (target - transform.position).normalized;
         int sign = Vector3.Cross(transform.forward, rotationTarget).y < 0 ? -1 : 1;
         targetAngle = (Vector3.Angle(transform.forward, target) * sign + currentAngle);
+
+        currentAngle = transform.rotation.eulerAngles.y;
     }
 
     // Update is called once per frame
     void Update () {
-
+        // TODO: throttle this code.
 
         getNewAngleoffset();
 
-        // code goes here.
-        if(targetAngle < currentAngle)
+
+        // todo bias
+        float angleDiff = Vector3.Dot(transform.forward, rotationTarget);
+
+        // code goes here. 
+        if (1.0f - angleDiff > angleBias)
         {
-            moveCmd.Left();
+            if (targetAngle < currentAngle)
+            {
+                moveCmd.Left();
+                turning = true;
+            }
+            else
+            if (targetAngle > currentAngle)
+            {
+                moveCmd.Right();
+                turning = true;
+            }
         }
         else
-        if (targetAngle > currentAngle)
+        if (turning)
         {
-            moveCmd.Right();
+            moveCmd.Stop();
+            turning = false;
         }
 
+        //Debug.Log(string.Format("currentAngleDiff: {0} {1}", 1-angleDiff, turning));
 
         if (currentAngle > 360)
         {
