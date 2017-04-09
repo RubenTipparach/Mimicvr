@@ -32,6 +32,7 @@ io.sockets.on('connection', (socket) => {
         logger.info('tested connection!');
     });
 
+    // Collect data from physical robot.
     socket.on('robot_collect_data', (data) => {
 
         logger.debug(data);
@@ -45,9 +46,10 @@ io.sockets.on('connection', (socket) => {
             });
         };
 
-        //executeDbStatement(insertDocument);
+        executeDbStatement(insertDocument);
     });
 
+    // Collect data from simulated robot.
     socket.on('robot_sim_collect_data', (data) => {
         logger.info("received callback!");
 
@@ -62,7 +64,7 @@ io.sockets.on('connection', (socket) => {
             });
         };
 
-        //executeDbStatement(insertDocument);
+        executeDbStatement(insertDocument);
     });
 });
 
