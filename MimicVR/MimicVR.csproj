@@ -122,6 +122,7 @@
     <Compile Include="Assets\Scripts\PIDControllers\SimpleMove.cs" />
     <Compile Include="Assets\Scripts\PIDControllers\SimpleRotate.cs" />
     <Compile Include="Assets\Scripts\PIDSubclass\RotationPID.cs" />
+    <Compile Include="Assets\Scripts\PathFinding\PathFinder.cs" />
     <Compile Include="Assets\Scripts\SocketMoveCmd.cs" />
     <Compile Include="Assets\Scripts\ViveRemoteController.cs" />
     <Compile Include="Assets\SocketIO\JSONObject\JSONObject.cs" />

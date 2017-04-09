@@ -19,27 +19,27 @@ serial.on('found', (address, name) => {
     console.log('address: ' + address);
     var bluetoothAddress = {address: address};
 
-    serial.findSerialPortChannel(address, function(channel) {
+    serial.findSerialPortChannel(address, (channel) => {
 
-        serial.connect(bluetoothAddress.address, channel, function() {
+        serial.connect(bluetoothAddress.address, channel, () => {
             console.log('connected');
             process.stdin.resume();
             process.stdin.setEncoding('utf8');
             console.log('Press "f" or "s" and "ENTER" to turn on or off the light.')
 
             // manual user input
-            process.stdin.on('data', function (data) {
+            process.stdin.on('data', (data) => {
                 //serial.write(data);
-                serial.write(new Buffer(data, 'utf-8'), function(err, bytesWritten) {
+                serial.write(new Buffer(data, 'utf-8'), (err, bytesWritten) => {
                      if (err) console.log(err);
                  });
             });
 
-            serial.on('data', function(data) {
+            serial.on('data', (data) => {
                 console.log('Received: ' + data);
             });
 
-        }, function () {
+        }, () => {
             console.log('cannot connect');
         });
     });
@@ -65,7 +65,7 @@ io.sockets.on('connection', (socket) =>
     {
         console.log("Command received " + data.command);
         //process.stdout.write(data.command);
-        serial.write(new Buffer(data.command, 'utf-8'), function(err, bytesWritten) {
+        serial.write(new Buffer(data.command, 'utf-8'), (err, bytesWritten) => {
              if (err) console.log(err);
          });
     });

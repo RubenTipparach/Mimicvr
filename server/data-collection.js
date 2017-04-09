@@ -1,16 +1,16 @@
 ﻿var colors = require('colors');
 var logger = require('./logger.js');
 
-module.exports =
-    class MongoConnectionServer {
-        /*
-         * summary: Setting all these dumb varaibles.
-         * TODO: Consider splitting up the SOAP API with server queries.
-         */
-        constructor() {
-            this.MongoClient = require('mongodb').MongoClient;
-            this.assert = require('assert');
-            this.url = 'mongodb://localhost:27017/MimicVr';
-        }
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
 
-    }
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+var url = 'mongodb://localhost:27017/MimicVr';
+
+// Collecting sockets data.
+io.sockets.on('connection', (socket) => {
+    socket.on('robot_collect_data', (data) => {
+
+    });
+}
