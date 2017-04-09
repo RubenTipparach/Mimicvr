@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveToController : MonoBehaviour {
+public class MotionVisualizer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

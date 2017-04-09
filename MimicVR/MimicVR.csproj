@@ -105,9 +105,10 @@
     <Compile Include="Assets\OVR\Scripts\Util\OVRWaitCursor.cs" />
     <Compile Include="Assets\Scripts\AbstractMoveCarBehavior.cs" />
     <Compile Include="Assets\Scripts\Analysis\DirectionalDisplay.cs" />
+    <Compile Include="Assets\Scripts\Analysis\MotionVisualizer.cs" />
     <Compile Include="Assets\Scripts\Analysis\RotationMeasure.cs" />
     <Compile Include="Assets\Scripts\CarControllerBehavior\GoAroundInACircle.cs" />
-    <Compile Include="Assets\Scripts\CarControllerBehavior\MoveToController.cs" />
+    <Compile Include="Assets\Scripts\Controller\MoveToController.cs" />
     <Compile Include="Assets\Scripts\Dan\LinearMove.cs" />
     <Compile Include="Assets\Scripts\DegreeThing.cs" />
     <Compile Include="Assets\Scripts\LocalMoveCmd.cs" />
