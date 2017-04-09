@@ -24,6 +24,12 @@ public class SocketMoveCmd : MonoBehaviour, RobotCommandInput
 	[SerializeField]
 	SocketIOComponent socket;
 
+    [SerializeField]
+    SocketIOComponent socketDataCollector;
+
+    [SerializeField]
+    Transform trackingAgent;
+
 	// Use this for initialization
 	void Start () {
 
@@ -92,11 +98,17 @@ public class SocketMoveCmd : MonoBehaviour, RobotCommandInput
 	{
 		//input = string.Format("{{ \"command\" : \"{0}\" }}", input);
         Debug.Log("input: " + input);
-		socket.Emit("test");
+		//socket.Emit("test");
 
 		//socket.Emit("robot-command", JSONObject.CreateStringObject(input));
 		socket.Emit("robot-command", JSONExt.ToJSO(new RobotCommand() { command = input }));
-	}
+        socketDataCollector.Emit("robot_collect_data", JSONExt.ToJSO(
+            new RobotData() {
+                position = trackingAgent.position,
+                direction = trackingAgent.rotation.eulerAngles,
+                command = input }));
+
+    }
 }
 
 public static class JSONExt
@@ -113,6 +125,20 @@ public class RobotCommand
 {
 	public string command;
 }
+
+
+[Serializable]
+public class RobotData
+{
+
+    public Vector3 position;
+
+    // y axis is always assumed to be up.
+    public Vector3 direction;
+
+    public string command;
+}
+
 
 
 public class HelloEvent

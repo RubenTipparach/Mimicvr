@@ -107,6 +107,7 @@
     <Compile Include="Assets\Scripts\Analysis\DirectionalDisplay.cs" />
     <Compile Include="Assets\Scripts\Analysis\MotionVisualizer.cs" />
     <Compile Include="Assets\Scripts\Analysis\RotationMeasure.cs" />
+    <Compile Include="Assets\Scripts\Analysis\SimulationDataCollector.cs" />
     <Compile Include="Assets\Scripts\CarControllerBehavior\GoAroundInACircle.cs" />
     <Compile Include="Assets\Scripts\Controller\MoveToController.cs" />
     <Compile Include="Assets\Scripts\Dan\LinearMove.cs" />
