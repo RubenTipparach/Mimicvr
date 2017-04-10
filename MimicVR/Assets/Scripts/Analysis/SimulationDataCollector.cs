@@ -27,15 +27,15 @@ public class SimulationDataCollector : MonoBehaviour
     public void commandFwd(string input)
     {
         var jso = JSONExt.ToJSO(
-       new RobotData()
-       {
-           position = trackingAgent.position,
-           direction = trackingAgent.rotation.eulerAngles,
-           command = input
-       });
+        new RobotData()
+        {
+            position = trackingAgent.position,
+            direction = trackingAgent.rotation.eulerAngles,
+            command = input
+        });
 
-       Debug.Log(jso);
+        Debug.Log(jso);
 
-       socketDataCollector.Emit("robot_sim_collect_data", jso);
+        socketDataCollector.Emit("robot_sim_collect_data", jso);
     }
 }
