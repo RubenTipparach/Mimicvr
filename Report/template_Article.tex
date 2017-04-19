@@ -87,11 +87,53 @@
 	
 	The second stage of experiments will be designed to test out 3 dimensional movements. While this will still be used on a wheeled robot, the robots will still have portions in the simulation that can move in the Y-Axis (Unity uses the left hand coordinate system with Y as up/down). This should allow a robot to follow the movements of the secondary tracked object with high precision using the PID system and the high accuracy tracking system of the Vive.
 	
+	\section{Implementation}
+	From the very start, an iterative approach to developing the system was taken. For each week, sometimes two week period the team would meet on a Sunday where everyone was available and figure out a way to sprint to the most viable goal within a 3-4 hour period. At first, a robot was assembled with the kit provided. Then the implementation began to develop a tracking system.
+	\\
+	The very first iteration of this was the Mimic MK1 \ref{fig:mimic-mk1}. The first model was meant to showcase a proof of concept as to how the robot would be tracked in virtual space. At first, there were some complications with getting the robot's rotational offset to track correctly, but it was quickly resolved by setting a time delay, allowing time for the Vive to sync with the controller's position and orientation. After that the tracked position of the robot was near perfect.
+	\\
+	Next up was the communication. Clearly, the work flow was exhausting to write code and upload to the system was tedious. This meant less time actually testing out code logic, and more time fidgeting with the compile and execution process. So the decision was made early to offload all the logic to the desktop computer, while maintaining only basic instructions on the robot. Luckily a script with basic controls for bluetooth serialization was available out of the box, and the with some minor modifications, it was installed in the robot for a quick proof of concept.
+		
+	\begin{figure}
+		\centering
+		\includegraphics[width=.6\textwidth]{robotv1.jpg}
+		\caption{Using a hand controller and gear ties to mount onto the robot.}
+		\label{fig:mimic-mk1}
+	\end{figure}
+	
+	The next stage of MK 1 was to develop an automated communication system. Although position was being provided, and now uploading of information from the robot was required (since the tracked objects took care of that), only data needed to flow one way from the desktop to the robot's bluetooth receiver. Unfortunately, the desktop being used was not working with bluetooth, a workaround done to use a persistently running Raspberry Pi. Mounted to one of the light house(Vive's tracking system uses a laser sweep module at 2 corners of a diagonal of the room) fixtures, the Pi was able to operate out of site and out of mind. There were some troubles installing Pi software that would enable bluetooth with the language of choice, Node JS, but eventually a suitable bluetooth package was found and data was able to be streamed directly from desktop to Pi and finally to the robot.
+	\\
+	After getting communication set up via Node JS application servers, a logic script had to be tested. The choice of this was Unity 3D. Because unity 3D had VR capabilities built into already, a simple installation of SteamVR SDK and the VR toolkit were all that was required to get the system running. However, Unity still needed to communicate with the Node JS server, so Socket.io was installed into Unity. Although no longer supported, and outdated by a few years it did the job. Perhaps in the future a switch to an officially maintained distributable version of socket.io would prove more useful when it comes time to implement more advanced networking protocols. Once the communication from Unity was setup, a direct line went from the Unity editor all the way to the robot. With the implementation of a simple control API, a simulation robot and the VR controlled robot could execute the exact same code but control two different systems. One being the simulated physics system in Unity and the other being the actuators on the robot. Hence the robots are mimicking one another.
+
+	\begin{figure}
+	\centering
+	\includegraphics[width=.6\textwidth]{Network_pipline.png}
+	\caption{Detailed look at the network portion of the architecture.}
+	\label{fig:network-pipe}
+	\end{figure}
+
+	Once this phase was complete, the next phase would no longer involve physically altering the robot or the VR system until the official Vive tracker would be released. For the next stage, a few iterations were taken to experiment on possible control schemes for driving the simulation and physical robots. Because the simulation had to strictly follow the behavior of the robot vehicle restrictions such as certain force, translation, or rotation operations were strictly prohibited. In fact, only the forward, backward, left, right, and stop instructions were coded into the simulation robot. The first iteration of this code was to use a variable timed interval to command the robot to move. For example, if it took 2 seconds to turn right 90 degrees, this command would be fed into the robot beforehand and wait 2 seconds until the next command. There were a couple of problems with this approach. The first was that neither the model or the actual robot were deterministic. This meant the time it took to rotate or move were not always fully predictable. This led to lots of cascading failures, where a miscalculation of rotation interval spiraled into the robot being stuck in perpetual rotation that were never near its intended target. Then the next approach was decided on, it turns out that the system ran much better without the timed instructions, but with incremental instructions. This allowed the robot to behave more like a responsive agent. This meant that any protrusion such as changes in floor friction or external changes in course would be quickly corrected. Unfortunately, the bluetooth system could not fully exploit this feature due to the delay between the web socket and bluetooth layers. However at 5-10 intervals per second, or roughly 100-200 milliseconds, the instructions were able to make it through well enough. Thus the max number of instructions sent was 10 times per second.
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=.6\textwidth]{robotv2.jpg}
+		\caption{Much lighter in weight, the MK2 allowed for a much more stable mount, and there was no more need for the delayed tracking, since the orientation of the tracker device was always the same as the robot.}
+		\label{fig:mimic-mk2}
+	\end{figure}
+	
+	By this time, the Vive tracker had arrived, and it was time to retire the clunky, unstable hand controller on the robot. Enter the Mimic MK 2 \ref{fig:mimic-mk2}. This version will run on the new code developed almost entirely with the simulation robot. By this time, because the robot was so lightly used, the battery was still on its first charge. Which shows how powerful and accurate a simulated robot environment could be. The deployment of the new code was effortless, since all that had to be done, was to drop the behavior script onto the Unity robot model, and it would control the physical robot as if it was all part of the game.
+	\\
+	The final stage of implementation was to test out path finding capabilities. The code for this used a few features that were already built into unity. The main one being, Unity's AI navigation API. This featured allowed the simulation to build a navigation mesh, a series of surfaces that were marked as valid navigation points. Then the code would generate the robot's planned path. This algorithm used a variation of A* search on a 2D surface. The waypoints were extracted from this planned path and encoded in to a vector array for the robot to reach in sequence. The results were satisfying. After making some adjustments to the physics parameters of the simulation, they began to perform very closely similarly However the physics in the game would often act unnaturally, such as too much friction would cause the simulated robot to stop prematurely from reaching its target, and too little, would cause the simulated robot accelerate far too fast. After a few tweaks, they were close approximations to one another. The added benefit was during the testing of having a person physically direct the robot to a navigation point in the room. The robot would follow like a very obedient dog. Another test would involve having the robot navigate through terrain, or obstacles as marked by the Unity game, and have the robot navigate around or avoid those obstacles. For the final test case, the navigation of two tracked robots would be used to determine how well these two models behave in conjunction. Which concludes this section on the implementation.
+	
+	
 	\section*{Data Analysis}
 	TODO: collect data from moving vehicles, comparing them between the simulation and the actual physical model.
 	
 	\section*{Conclusion}
 	TODO: Summarize what actually happened, how well the system behave, performance measures in terms of response time.
+	
+	\section*{Future work}
+	TODO: work on this in the future!
 	
 	\section*{REFERENCES}
 	\begin{thebibliography}{99}
