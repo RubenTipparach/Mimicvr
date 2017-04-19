@@ -21,6 +21,7 @@ public class PathFinder : MonoBehaviour {
 
     Vector3[] waypoints;
 
+    [SerializeField]
     LineRenderer lineRender;
 
     public int movingToPosition;
@@ -28,11 +29,15 @@ public class PathFinder : MonoBehaviour {
     [SerializeField]
     Transform hullTransform;
 
-	// Use this for initialization
-	void Start () {
+
+    [SerializeField]
+    float nextWaypointThreshold = .1f;
+
+    // Use this for initialization
+    void Start () {
 
         navAgent = GetComponent<NavMeshAgent>();
-        lineRender = GetComponent<LineRenderer>();
+        //lineRender = GetComponent<LineRenderer>();
     }
 	
 	// Update is called once per frame
@@ -67,7 +72,7 @@ public class PathFinder : MonoBehaviour {
         if(movingToPosition != lineRender.numPositions-1 && waypoints != null)
         {
             //keep testing the car and move it forward continuously
-            var colliders = Physics.OverlapSphere(waypoints[movingToPosition], .5f, layerMask);
+            var colliders = Physics.OverlapSphere(waypoints[movingToPosition], nextWaypointThreshold, layerMask);
 
             Debug.Log("colliders detected " + colliders.Length);
 
