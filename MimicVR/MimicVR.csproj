@@ -111,6 +111,7 @@
     <Compile Include="Assets\Scripts\Analysis\MotionVisualizer.cs" />
     <Compile Include="Assets\Scripts\Analysis\RotationMeasure.cs" />
     <Compile Include="Assets\Scripts\Analysis\SimulationDataCollector.cs" />
+    <Compile Include="Assets\Scripts\Analysis\SynchTargets.cs" />
     <Compile Include="Assets\Scripts\CarControllerBehavior\GoAroundInACircle.cs" />
     <Compile Include="Assets\Scripts\Controller\MoveToController.cs" />
     <Compile Include="Assets\Scripts\Dan\LinearMove.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="Assets\Scripts\PIDControllers\SimpleRotate.cs" />
     <Compile Include="Assets\Scripts\PIDSubclass\RotationPID.cs" />
     <Compile Include="Assets\Scripts\PathFinding\PathFinder.cs" />
+    <Compile Include="Assets\Scripts\PathFinding\SuperWaypointFinder.cs" />
     <Compile Include="Assets\Scripts\SocketMoveCmd.cs" />
     <Compile Include="Assets\Scripts\ViveRemoteController.cs" />
     <Compile Include="Assets\SocketIO\JSONObject\JSONObject.cs" />

@@ -12,6 +12,9 @@ public class SimulationDataCollector : MonoBehaviour
     [SerializeField]
     Transform trackingAgent;
 
+    [SerializeField]
+    bool isSimBot = true;
+
     // Use this for initialization
     void Start () {
         // some bug requires this test message to be sent first.
@@ -36,6 +39,13 @@ public class SimulationDataCollector : MonoBehaviour
 
         Debug.Log(jso);
 
-        socketDataCollector.Emit("robot_sim_collect_data", jso);
+        if(isSimBot)
+        {
+            socketDataCollector.Emit("robot_sim_collect_data", jso);
+        }
+        else
+        {
+            socketDataCollector.Emit("robot_vr_collect_data", jso);
+        }
     }
 }

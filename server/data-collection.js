@@ -51,20 +51,13 @@ io.sockets.on('connection', (socket) => {
 
     // Collect data from simulated robot.
     socket.on('robot_sim_collect_data', (data) => {
-        logger.info("received callback!");
+		//  logger.info("received callback!");
+        logger.info({"robot_sim" : data);       
+    });
 
-        logger.info(data);
-
-        var insertDocument = (db, callback) => {
-            db.collection('CarSimMotionData').insertOne(data, (err, result) => {
-                assert.equal(err, null);
-
-                //writeMarkerEvent(formData);
-                //callback();
-            });
-        };
-
-        executeDbStatement(insertDocument);
+    socket.on('robot_vr_collect_data', (data) => {
+		//  logger.info("received callback!");
+        logger.info({"robot_vr" : data);       
     });
 });
 

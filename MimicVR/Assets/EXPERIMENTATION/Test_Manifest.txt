@@ -12,9 +12,6 @@ Tests basic navigation systems.
 
 Scoring: 
 
-Game controlled AI as baseline
-	- Time to goal
-	- Time to each waypoint
 	
 Game Simulation Robot
 	- Time to goal
@@ -31,13 +28,10 @@ Actual VR Robot
 /**********\
  * Test 2 *
 \**********/
-Tests waypoint navigation systems.
+Tests waypoint navigation systems. <------- TODO. I'm fucking tired.
 
 Scoring: 
-Game controlled AI as baseline
-	- Time to goal
-	- Time to each waypoint
-	
+
 Game Simulation Robot
 	- Time to goal
 	- Time to each waypoint
@@ -58,10 +52,7 @@ Actual VR Robot
 Test A* pathfinding algorithm in Unity.
 
 Scoring: 
-Game controlled AI as baseline
-	- Time to goal
-	- Time to each waypoint
-	
+
 Game Simulation Robot
 	- Time to goal
 	- Time to each waypoint
@@ -81,10 +72,7 @@ Actual VR Robot
 Testing A* pathfinding algorithm with moving objects.
 
 Scoring: 
-Game controlled AI as baseline
-	- Time to goal
-	- Time to each waypoint
-	
+
 Game Simulation Robot
 	- Time to goal
 	- Time to each waypoint
@@ -94,3 +82,29 @@ Actual VR Robot
 	- Time to goal
 	- Time to each waypoint
 	- Motion comparison
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ * Future work:
+ * We didn't have enough time to fully implement all the features.
+ * 
+ * - Robot armature using IK
+ * - A NavMesh agent for baseline for both the VR robot and the Game physics robot
+ * - A database for storing data
+ * - A maze environment
+ * - different, more elevated environment, more 'natural' scenarios
+ * - multiple agents, a multiplayer system
+ * - remote controlled from another building/location, simulate bomb diffusal for example
+ * - Room scanning using photgrammetry tech from another project
+ */

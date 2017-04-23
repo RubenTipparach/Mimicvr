@@ -8,7 +8,7 @@ public class PathFinder : MonoBehaviour {
     NavMeshAgent navAgent;
 
     [SerializeField]
-    bool getNewPath = false;
+    public bool getNewPath = false;
 
     [SerializeField]
     public Transform target;
