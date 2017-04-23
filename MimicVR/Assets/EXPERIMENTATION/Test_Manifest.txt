@@ -1,0 +1,96 @@
+---------------------------------
+|                               |
+| MIMICVR - Test specifications |
+|===============================|
+---------------------------------
+
+
+/**********\
+ * Test 1 *
+\**********/
+Tests basic navigation systems.
+
+Scoring: 
+
+Game controlled AI as baseline
+	- Time to goal
+	- Time to each waypoint
+	
+Game Simulation Robot
+	- Time to goal
+	- Time to each waypoint
+	- Motion comparison
+
+Actual VR Robot
+	- Time to goal
+	- Time to each waypoint
+	- Motion comparison
+
+
+
+/**********\
+ * Test 2 *
+\**********/
+Tests waypoint navigation systems.
+
+Scoring: 
+Game controlled AI as baseline
+	- Time to goal
+	- Time to each waypoint
+	
+Game Simulation Robot
+	- Time to goal
+	- Time to each waypoint
+	- Motion comparison
+
+Actual VR Robot
+	- Time to goal
+	- Time to each waypoint
+	- Motion comparison
+
+
+
+
+
+/**********\
+ * Test 3 *
+\**********/
+Test A* pathfinding algorithm in Unity.
+
+Scoring: 
+Game controlled AI as baseline
+	- Time to goal
+	- Time to each waypoint
+	
+Game Simulation Robot
+	- Time to goal
+	- Time to each waypoint
+	- Motion comparison
+
+Actual VR Robot
+	- Time to goal
+	- Time to each waypoint
+	- Motion comparison
+
+
+
+
+/**********\
+ * Test 4 *
+\**********/
+Testing A* pathfinding algorithm with moving objects.
+
+Scoring: 
+Game controlled AI as baseline
+	- Time to goal
+	- Time to each waypoint
+	
+Game Simulation Robot
+	- Time to goal
+	- Time to each waypoint
+	- Motion comparison
+
+Actual VR Robot
+	- Time to goal
+	- Time to each waypoint
+	- Motion comparison

@@ -56,7 +56,7 @@ public class PathFinder : MonoBehaviour {
                 // Debug.Log("path calculated.");
                 
                 waypoints = path.corners;
-                lineRender.numPositions = waypoints.Length;
+                lineRender.positionCount = waypoints.Length;
                 lineRender.SetPositions(waypoints);
 
                 // start from 0.
@@ -69,7 +69,7 @@ public class PathFinder : MonoBehaviour {
             navAgent.enabled = false;
         }
 
-        if(movingToPosition != lineRender.numPositions-1 && waypoints != null)
+        if(movingToPosition != lineRender.positionCount-1 && waypoints != null)
         {
             //keep testing the car and move it forward continuously
             var colliders = Physics.OverlapSphere(waypoints[movingToPosition], nextWaypointThreshold, layerMask);
