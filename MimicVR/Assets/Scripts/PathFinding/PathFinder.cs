@@ -37,6 +37,7 @@ public class PathFinder : MonoBehaviour {
     void Start () {
 
         navAgent = GetComponent<NavMeshAgent>();
+        navAgent.enabled = false;
         //lineRender = GetComponent<LineRenderer>();
     }
 	
@@ -49,27 +50,30 @@ public class PathFinder : MonoBehaviour {
 
             navAgent.CalculatePath(masterTarget.position, path);
 
-            //Debug.Log(path.status);
-
-            if (path.status == NavMeshPathStatus.PathPartial || path.status == NavMeshPathStatus.PathComplete)
+            if(path != null)
             {
-                // Debug.Log("path calculated.");
+
+                Debug.Log(path.status);
+
+                if (path.status == NavMeshPathStatus.PathPartial || path.status == NavMeshPathStatus.PathComplete)
+                {
+                     Debug.Log("path calculated.");
                 
-                waypoints = path.corners;
-                lineRender.positionCount = waypoints.Length;
-                lineRender.SetPositions(waypoints);
+                    waypoints = path.corners;
+                    lineRender.numPositions = waypoints.Length;
+                    lineRender.SetPositions(waypoints);
 
-                // start from 0.
-                movingToPosition = 0;
+                    // start from 0.
+                    movingToPosition = 0;
 
-                target.position = waypoints[0];
+                    target.position = waypoints[0];
+                }
             }
-
             getNewPath = false;
-            navAgent.enabled = false;
+           // navAgent.enabled = false;
         }
 
-        if(movingToPosition != lineRender.positionCount-1 && waypoints != null)
+        if(movingToPosition != lineRender.numPositions - 1 && waypoints != null)
         {
             //keep testing the car and move it forward continuously
             var colliders = Physics.OverlapSphere(waypoints[movingToPosition], nextWaypointThreshold, layerMask);

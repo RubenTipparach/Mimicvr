@@ -52,12 +52,12 @@ io.sockets.on('connection', (socket) => {
     // Collect data from simulated robot.
     socket.on('robot_sim_collect_data', (data) => {
 		//  logger.info("received callback!");
-        logger.info({"robot_sim" : data);       
+        logger.info({"robot_sim" : data});       
     });
 
     socket.on('robot_vr_collect_data', (data) => {
 		//  logger.info("received callback!");
-        logger.info({"robot_vr" : data);       
+        logger.info({"robot_vr" : data});       
     });
 });
 

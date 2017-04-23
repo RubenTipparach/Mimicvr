@@ -37,7 +37,7 @@ public class SimulationDataCollector : MonoBehaviour
             command = input
         });
 
-        Debug.Log(jso);
+        //Debug.Log(jso);
 
         if(isSimBot)
         {

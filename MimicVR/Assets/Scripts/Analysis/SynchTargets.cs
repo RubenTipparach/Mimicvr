@@ -12,11 +12,11 @@ public class SynchTargets : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        offsetVector = transform.position - masterTarget.position;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        transform.position = masterTarget.position + offsetVector;
 	}
 }
