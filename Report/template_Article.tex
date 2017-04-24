@@ -64,7 +64,7 @@
 	This data is then used to update the game engine's virtual representation of the physical car. As the simulated and tracked cars use the same code, they both hold the API with different actual implementations. The tracked car holds only the code to synchronize its position and rotation, while the simulation car holds code to actually apply force to the rigid body physics model inside the game. The main difference is that the tracked car object actually holds a network interface as well that forwards any instructions made in the game engine to the physical car model. This is what drives the agent to move.
 	\\
 	The user is then able to issue commands to the car either remotely at the location of the physical car, from the computer with the game engine, or in any other location that has a connection to the web server that is connected to the physical car.
-	\section*{Experiment}
+	\section*{Overview}
 	This study examines the use of VR as an interface tool for robotics. The main question here is, how can Virtual Reality technology be used to augment the simulation and command of physical robots? The environment will be set up in Unity with the SteamVR software installed. It is also using the VR toolkit from the Unity asset store.
 	\\ 
 	To simulate robotic systems, a Unity rigid body object is assigned to a simulated version. 		\begin{figure}[h]
@@ -77,20 +77,18 @@
 	\\ 
 	Basic instructions can be encoded such as moving in a circular motion once, and then will be translated to both robot models, the physical and virtual simultaneously. This allows for data collection and analysis of the difference in the algorithm used for the physical and virtual counterparts. In addition data can be collected in terms of delta-rotational and delta-velocities to determine correct orientation and speed using timed outputs of movement commands.
 	\\ 
-	This feedback loop is ideal for a PID(Partial Integral Derivative) controller that can be used to drive both models simultaneously. Certain factors such as friction have to be accounted for in order to have these two models operate in a relatively similar fashion. The PID controller will allow the robots to gain full control of speed and directional heading to a close approximation to the desired rotation and velocity. This will allow the robots to hit targeted way points without any external guidance.
+	This feedback loop is ideal for a continuous course correction algorithm. The code will adjust rotation to the desired direction vector, and a forward/backward drive will move the car to reach its target. If it passes, it will move back and adjust itself until it is with in acceptable bounds. This will allow the robots to hit targeted way points without any external guidance.
 	\\ 
-	Experiments will be designed to test out various user-to-robot interfaces such as commanding the robot to follow a designated way point. Sets of different waypoints will be used to test the PID system and its parameters. Some adaptive learning techniques maybe applied so that the robot can calibrate itself on various terrains.
+	Experiments will be designed to test out various user-to-robot interfaces such as commanding the robot to follow a designated way point. Sets of different waypoints will be used to test the PID systems, and other implementations if needed. Some adaptive learning techniques maybe applied so that the robot can calibrate itself on various terrains.
 	\\ 
 	The first stage of experiments will be to test out the capability of following multiple way points in 2 dimensional space. These will include, single way point navigation, multiple way point navigation, and simulated collision avoidance.
 	\\ 
-
-	
-	The second stage of experiments will be designed to test out 3 dimensional movements. While this will still be used on a wheeled robot, the robots will still have portions in the simulation that can move in the Y-Axis (Unity uses the left hand coordinate system with Y as up/down). This should allow a robot to follow the movements of the secondary tracked object with high precision using the PID system and the high accuracy tracking system of the Vive.
+	The second stage of experiments will be designed to test out 3 dimensional movements. While this will still be used on a wheeled robot, the robots will still have portions in the simulation that can move in the Y-Axis (Unity uses the left hand coordinate system with Y as up/down). This should allow a robot to follow the movements of the secondary tracked object with high precision using the navigation and path finding system and the high accuracy tracking system of the Vive.
 	
 	\section{Implementation}
 	From the very start, an iterative approach to developing the system was taken. For each week, sometimes two week period the team would meet on a Sunday where everyone was available and figure out a way to sprint to the most viable goal within a 3-4 hour period. At first, a robot was assembled with the kit provided. Then the implementation began to develop a tracking system.
 	\\
-	The very first iteration of this was the Mimic MK1 \ref{fig:mimic-mk1}. The first model was meant to showcase a proof of concept as to how the robot would be tracked in virtual space. At first, there were some complications with getting the robot's rotational offset to track correctly, but it was quickly resolved by setting a time delay, allowing time for the Vive to sync with the controller's position and orientation. After that the tracked position of the robot was near perfect.
+	The very first iteration of this was the Mimic MK1 (figure \ref{fig:mimic-mk1}). The first model was meant to showcase a proof of concept as to how the robot would be tracked in virtual space. At first, there were some complications with getting the robot's rotational offset to track correctly, but it was quickly resolved by setting a time delay, allowing time for the Vive to sync with the controller's position and orientation. After that the tracked position of the robot was near perfect.
 	\\
 	Next up was the communication. Clearly, the work flow was exhausting to write code and upload to the system was tedious. This meant less time actually testing out code logic, and more time fidgeting with the compile and execution process. So the decision was made early to offload all the logic to the desktop computer, while maintaining only basic instructions on the robot. Luckily a script with basic controls for bluetooth serialization was available out of the box, and the with some minor modifications, it was installed in the robot for a quick proof of concept.
 		
@@ -121,9 +119,47 @@
 		\label{fig:mimic-mk2}
 	\end{figure}
 	
-	By this time, the Vive tracker had arrived, and it was time to retire the clunky, unstable hand controller on the robot. Enter the Mimic MK 2 \ref{fig:mimic-mk2}. This version will run on the new code developed almost entirely with the simulation robot. By this time, because the robot was so lightly used, the battery was still on its first charge. Which shows how powerful and accurate a simulated robot environment could be. The deployment of the new code was effortless, since all that had to be done, was to drop the behavior script onto the Unity robot model, and it would control the physical robot as if it was all part of the game.
+	By this time, the Vive tracker had arrived, and it was time to retire the clunky, unstable hand controller on the robot. Enter the Mimic MK 2 (figure \ref{fig:mimic-mk2}). This version will run on the new code developed almost entirely with the simulation robot. By this time, because the robot was so lightly used, the battery was still on its first charge. Which shows how powerful and accurate a simulated robot environment could be. The deployment of the new code was effortless, since all that had to be done, was to drop the behavior script onto the Unity robot model, and it would control the physical robot as if it was all part of the game.
 	\\
-	The final stage of implementation was to test out path finding capabilities. The code for this used a few features that were already built into unity. The main one being, Unity's AI navigation API. This featured allowed the simulation to build a navigation mesh, a series of surfaces that were marked as valid navigation points. Then the code would generate the robot's planned path. This algorithm used a variation of A* search on a 2D surface. The waypoints were extracted from this planned path and encoded in to a vector array for the robot to reach in sequence. The results were satisfying. After making some adjustments to the physics parameters of the simulation, they began to perform very closely similarly However the physics in the game would often act unnaturally, such as too much friction would cause the simulated robot to stop prematurely from reaching its target, and too little, would cause the simulated robot accelerate far too fast. After a few tweaks, they were close approximations to one another. The added benefit was during the testing of having a person physically direct the robot to a navigation point in the room. The robot would follow like a very obedient dog. Another test would involve having the robot navigate through terrain, or obstacles as marked by the Unity game, and have the robot navigate around or avoid those obstacles. For the final test case, the navigation of two tracked robots would be used to determine how well these two models behave in conjunction. Which concludes this section on the implementation.
+	The final stage of implementation was to test out path finding capabilities. The code for this used a few features that were already built into unity. The main one being, Unity's AI navigation API. This featured allowed the simulation to build a navigation mesh, a series of surfaces that were marked as valid navigation points. Then the code would generate the robot's planned path. This algorithm used a variation of A* search on a 2D surface. The waypoints were extracted from this planned path and encoded in to a vector array for the robot to reach in sequence. The results were satisfying. After making some adjustments to the physics parameters of the simulation, they began to perform very closely similarly However the physics in the game would often act unnaturally, such as too much friction would cause the simulated robot to stop prematurely from reaching its target, and too little, would cause the simulated robot accelerate far too fast. After a few tweaks, they were close approximations to one another. The added benefit was during the testing of having a person physically direct the robot to a navigation point in the room. 
+	
+	\section{Testing Setup}
+	A few additional tools were implemented to capture this data. As mentioned in the implementation section, a parallel web socket server was set up to capture the data from the game engine so that it could log the data to a file. This was done so that the data could be easily retrieved later on using Node JS software. The data was processed through another script that transformed it into csv and separated the simulation and VR data. This data represented recordings of the tested sessions to be used for further analysis. A visualizer was used for the playback of rotation and positions of the robot cars. The experiment is broken up into 3 sections.
+	
+	\subsection{Test 1}
+	For this test, the robot car will move to a single linear way point This test was further broken up into 3 sub sections (figure \ref{fig:traversal_patterns}). Section 1 dealt with a circular pattern, moving around the perimeter of the room, one click at a time. The robot car followed the way points guided in 3D space via the Vive hand controller. Section 2 was the a zig-zag pattern. Section 3 is a back and forth pattern.
+		
+	\begin{figure}
+		\centering
+		\includegraphics[width=.6\textwidth]{basic_traversal.jpg}
+		\caption{Basic traversal patterns for Test 1 and 2}
+		\label{fig:traversal_patterns}
+	\end{figure}
+
+	\subsection{Test 2}
+	Similar to test 1, but using the way point system instead. The positions were queued up and released for traversal at the end. These results will be compared to see how the traversal methods differ. The hypothesis is that friction and inertia will play a major factor in the auto correction system built into the navigation code.
+	
+	\subsection{Test 3}
+	This section differs from the first two as it introduces obstacles into the system. Since the beginning of this project, it was decided that path finding would play a major roll in having the robot cars figure out fast and efficient paths through moving and non-moving obstacles. Due to time constraints and limited space, only static obstacles were used. In addition, the equipment hadn't arrived for room scanning to be readily available, thus a measuring tape was used to help guess the dimensions and avoidance boundaries of these obstacles.
+	\\
+	These tests were broken up into two main categories, Test - 3A for a convex obstacle, and Test - 3B for a concave obstacle.
+	
+	\subsubsection{Test 3 - A}
+	This pattern flows around a central obstacle. The first section is single direction, the second is bidirectional. (figure\ref{fig:convex_travesal})
+		\begin{figure}
+			\centering
+			\includegraphics[width=.6\textwidth]{convex_traversals.jpg}
+			\caption{Traversal pattern for Test 3A}
+			\label{fig:convex_travesal}
+		\end{figure}
+	\subsubsection{Test 3 - B}
+	This pattern uses the A* search in a more complex manner, it travels around the corner of the L shape and to the destination, the second destination is ordering it to end up back where it started.(figure\ref{fig:concave_travesal})
+		\begin{figure}
+			\centering
+			\includegraphics[width=.6\textwidth]{concave_traversals.jpg}
+			\caption{Traversal pattern for Test 3B}
+			\label{fig:concave_travesal}
+		\end{figure}
 	
 	
 	\section*{Data Analysis}
