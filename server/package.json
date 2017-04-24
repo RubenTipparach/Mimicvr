@@ -9,6 +9,7 @@
   "dependencies": {
     "colors": "^1.1.2",
     "express": "^4.15.2",
+    "json2csv": "^3.7.3",
     "mongodb": "^2.2.25",
     "socket.io": "^1.7.3",
     "winston": "^2.3.1"
