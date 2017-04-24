@@ -32,12 +32,14 @@ fs.readdir(testFolder, (err, files) => {
             //console.log(vrbots);
 
      
-            var fields = ['robot_vr.position.x', 'robot_vr.position.y', 'robot_vr.position.z'];
+            var fields = ['robot_vr.position.x', 'robot_vr.position.y', 'robot_vr.position.z',
+                'robot_vr.direction.x', 'robot_vr.direction.y', 'robot_vr.direction.z'];
 
     
             transformRawData(vrbots, fields, 'robot_vr' + file);
 
-            var fields = ['robot_sim.position.x', 'robot_sim.position.y', 'robot_sim.position.z'];
+            var fields = ['robot_sim.position.x', 'robot_sim.position.y', 'robot_sim.position.z',
+                'robot_sim.direction.x', 'robot_sim.direction.y', 'robot_sim.direction.z'];
 
             transformRawData(simbots, fields, 'robot_sim' + file);
     
