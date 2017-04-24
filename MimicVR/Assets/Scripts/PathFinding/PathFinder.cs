@@ -70,7 +70,7 @@ public class PathFinder : MonoBehaviour {
                 }
             }
             getNewPath = false;
-           // navAgent.enabled = false;
+            navAgent.enabled = false;
         }
 
         if(movingToPosition != lineRender.numPositions - 1 && waypoints != null)
@@ -82,9 +82,10 @@ public class PathFinder : MonoBehaviour {
 
             foreach (var c in colliders)
             {
-                Debug.Log(c.name);
                 if (c.transform == hullTransform)
                 {
+                    Debug.Log(c.name);
+
                     movingToPosition++;
                     target.position = waypoints[movingToPosition];
                 }
