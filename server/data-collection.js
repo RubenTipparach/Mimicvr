@@ -36,17 +36,6 @@ io.sockets.on('connection', (socket) => {
     socket.on('robot_collect_data', (data) => {
 
         logger.debug(data);
-
-        var insertDocument = (db, callback) => {
-            db.collection('CarMotionData').insertOne(data, (err, result) => {
-                assert.equal(err, null);
-
-                //writeMarkerEvent(formData);
-                //callback();
-            });
-        };
-
-        executeDbStatement(insertDocument);
     });
 
     // Collect data from simulated robot.

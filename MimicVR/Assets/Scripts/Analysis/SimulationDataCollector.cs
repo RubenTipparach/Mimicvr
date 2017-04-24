@@ -13,7 +13,7 @@ public class SimulationDataCollector : MonoBehaviour
     Transform trackingAgent;
 
     [SerializeField]
-    bool isSimBot = true;
+   public bool isSimBot = true;
 
     // Use this for initialization
     void Start () {

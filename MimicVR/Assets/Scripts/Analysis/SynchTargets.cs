@@ -5,7 +5,7 @@ using UnityEngine;
 public class SynchTargets : MonoBehaviour {
 
     [SerializeField]
-    Vector3 offsetVector;
+    public Vector3 offsetVector;
 
     [SerializeField]
     Transform masterTarget;

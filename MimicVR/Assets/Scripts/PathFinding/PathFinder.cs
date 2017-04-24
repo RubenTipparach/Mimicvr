@@ -19,7 +19,8 @@ public class PathFinder : MonoBehaviour {
     [SerializeField]
     LayerMask layerMask;
 
-    Vector3[] waypoints;
+    //[SerializeField]
+    Vector3[] _waypoints;
 
     [SerializeField]
     LineRenderer lineRender;
@@ -33,9 +34,13 @@ public class PathFinder : MonoBehaviour {
     [SerializeField]
     float nextWaypointThreshold = .1f;
 
+
+    [SerializeField]
+    float floorOffset = 0.5f;
+
     // Use this for initialization
     void Start () {
-
+        floorOffset = transform.position.y;
         navAgent = GetComponent<NavMeshAgent>();
         navAgent.enabled = false;
         //lineRender = GetComponent<LineRenderer>();
@@ -53,43 +58,70 @@ public class PathFinder : MonoBehaviour {
             if(path != null)
             {
 
-                Debug.Log(path.status);
+                //Debug.Log(path.status);
 
                 if (path.status == NavMeshPathStatus.PathPartial || path.status == NavMeshPathStatus.PathComplete)
                 {
                      Debug.Log("path calculated.");
                 
-                    waypoints = path.corners;
-                    lineRender.numPositions = waypoints.Length;
-                    lineRender.SetPositions(waypoints);
+                    _waypoints = path.corners;
+                    lineRender.numPositions = _waypoints.Length;
+                    lineRender.SetPositions(_waypoints);
 
                     // start from 0.
                     movingToPosition = 0;
 
-                    target.position = waypoints[0];
+                    target.position = _waypoints[0];
                 }
             }
+
             getNewPath = false;
             navAgent.enabled = false;
         }
 
-        if(movingToPosition != lineRender.numPositions - 1 && waypoints != null)
+        if(movingToPosition != lineRender.numPositions - 1 && _waypoints != null)
         {
             //keep testing the car and move it forward continuously
-            var colliders = Physics.OverlapSphere(waypoints[movingToPosition], nextWaypointThreshold, layerMask);
+            var colliders = Physics.OverlapSphere(_waypoints[movingToPosition], nextWaypointThreshold, layerMask);
 
-            Debug.Log("colliders detected " + colliders.Length);
+            Debug.Log("colliders detected " );
+
+            foreach (var w in _waypoints)
+            {
+                Debug.Log(w);
+            }
 
             foreach (var c in colliders)
             {
                 if (c.transform == hullTransform)
                 {
-                    Debug.Log(c.name);
+                    Debug.Log("next position");
 
                     movingToPosition++;
-                    target.position = waypoints[movingToPosition];
+                    target.position = _waypoints[movingToPosition];
                 }
             }
         }
+    }
+
+    public void uploadWaypoints(List<Vector3> waypoints, Vector3 offset)
+    {
+        List<Vector3> copiedList = new List<Vector3>(waypoints.Count);
+
+        foreach(var w in waypoints)
+        {
+            copiedList.Add(new Vector3(w.x, floorOffset, w.z));
+        }
+
+        Debug.Log("path calculated.");
+
+        this._waypoints = copiedList.ToArray();
+        lineRender.numPositions = this._waypoints.Length;
+        lineRender.SetPositions(this._waypoints);
+
+        // start from 0.
+        movingToPosition = 0;
+
+        target.position = this._waypoints[0];
     }
 }

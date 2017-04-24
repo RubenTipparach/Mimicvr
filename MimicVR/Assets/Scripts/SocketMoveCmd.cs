@@ -19,9 +19,12 @@ public interface RobotCommandInput
 
 public class SocketMoveCmd : MonoBehaviour, RobotCommandInput
 {
+    Vector3 moveDirection = Vector3.zero;
 
-	// Use JSON objects for serialization!
-	[SerializeField]
+    Vector3 rotateDirection = Vector3.zero;
+
+    // Use JSON objects for serialization!
+    [SerializeField]
 	SocketIOComponent socket;
 
     [SerializeField]
@@ -108,6 +111,14 @@ public class SocketMoveCmd : MonoBehaviour, RobotCommandInput
                 direction = trackingAgent.rotation.eulerAngles,
                 command = input }));
 
+        var dataCollector = GetComponent<SimulationDataCollector>();
+        if (dataCollector != null)
+        {
+            dataCollector.commandFwd(string.Format
+                ("move: {0}  rotate: {1}",
+                moveDirection,
+                rotateDirection));
+        }
     }
 }
 
