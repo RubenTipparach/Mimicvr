@@ -71,7 +71,7 @@ function transformRawData(items, fields, file)
     }
 
     // write json.
-    fs.writeFile("./" + file, JSON.stringify(items), function (err) {
+    fs.writeFile("./" + file, JSON.stringify({ "data": items }), function (err) {
         if (err) { return console.log(err); }
 
         console.log("The file was saved!");

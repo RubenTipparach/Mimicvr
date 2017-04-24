@@ -46,7 +46,12 @@ public class PathFinder : MonoBehaviour {
         //lineRender = GetComponent<LineRenderer>();
     }
 	
-	// Update is called once per frame
+    /// <summary>
+    /// When get new path is triggered, the program gets the path from Unity's native
+    /// NavMesh agent path finding algorithm.
+    /// getNewPath variable is used this way since it allows users to manually trigger
+    /// path calculation when neeeded.
+    /// </summary>
 	void Update () {
         if (getNewPath)
         {
@@ -104,6 +109,11 @@ public class PathFinder : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Waypoints from user gets substituted here.
+    /// </summary>
+    /// <param name="waypoints"></param>
+    /// <param name="offset"></param>
     public void uploadWaypoints(List<Vector3> waypoints, Vector3 offset)
     {
         List<Vector3> copiedList = new List<Vector3>(waypoints.Count);
