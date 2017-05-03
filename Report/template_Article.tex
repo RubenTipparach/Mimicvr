@@ -85,7 +85,7 @@
 	\\ 
 	The second stage of experiments will be designed to test out 3 dimensional movements. While this will still be used on a wheeled robot, the robots will still have portions in the simulation that can move in the Y-Axis (Unity uses the left hand coordinate system with Y as up/down). This should allow a robot to follow the movements of the secondary tracked object with high precision using the navigation and path finding system and the high accuracy tracking system of the Vive.
 	
-	\section{Implementation}
+	\section*{Implementation}
 	From the very start, an iterative approach to developing the system was taken. For each week, sometimes two week period the team would meet on a Sunday where everyone was available and figure out a way to sprint to the most viable goal within a 3-4 hour period. At first, a robot was assembled with the kit provided. Then the implementation began to develop a tracking system.
 	\\
 	The very first iteration of this was the Mimic MK1 (figure \ref{fig:mimic-mk1}). The first model was meant to showcase a proof of concept as to how the robot would be tracked in virtual space. At first, there were some complications with getting the robot's rotational offset to track correctly, but it was quickly resolved by setting a time delay, allowing time for the Vive to sync with the controller's position and orientation. After that the tracked position of the robot was near perfect.
@@ -123,10 +123,10 @@
 	\\
 	The final stage of implementation was to test out path finding capabilities. The code for this used a few features that were already built into unity. The main one being, Unity's AI navigation API. This featured allowed the simulation to build a navigation mesh, a series of surfaces that were marked as valid navigation points. Then the code would generate the robot's planned path. This algorithm used a variation of A* search on a 2D surface. The waypoints were extracted from this planned path and encoded in to a vector array for the robot to reach in sequence. The results were satisfying. After making some adjustments to the physics parameters of the simulation, they began to perform very closely similarly However the physics in the game would often act unnaturally, such as too much friction would cause the simulated robot to stop prematurely from reaching its target, and too little, would cause the simulated robot accelerate far too fast. After a few tweaks, they were close approximations to one another. The added benefit was during the testing of having a person physically direct the robot to a navigation point in the room. 
 	
-	\section{Testing Setup}
+	\section*{Testing Setup}
 	A few additional tools were implemented to capture this data. As mentioned in the implementation section, a parallel web socket server was set up to capture the data from the game engine so that it could log the data to a file. This was done so that the data could be easily retrieved later on using Node JS software. The data was processed through another script that transformed it into csv and separated the simulation and VR data. This data represented recordings of the tested sessions to be used for further analysis. A visualizer was used for the playback of rotation and positions of the robot cars. The experiment is broken up into 3 sections.
 	
-	\subsection{Test 1}
+	\subsection*{Test 1}
 	For this test, the robot car will move to a single linear way point This test was further broken up into 3 sub sections (figure \ref{fig:traversal_patterns}). Section 1 dealt with a circular pattern, moving around the perimeter of the room, one click at a time. The robot car followed the way points guided in 3D space via the Vive hand controller. Section 2 was the a zig-zag pattern. Section 3 is a back and forth pattern.
 		
 	\begin{figure}
@@ -136,15 +136,15 @@
 		\label{fig:traversal_patterns}
 	\end{figure}
 
-	\subsection{Test 2}
+	\subsection*{Test 2}
 	Similar to test 1, but using the way point system instead. The positions were queued up and released for traversal at the end. These results will be compared to see how the traversal methods differ. The hypothesis is that friction and inertia will play a major factor in the auto correction system built into the navigation code.
 	
-	\subsection{Test 3}
+	\subsection*{Test 3}
 	This section differs from the first two as it introduces obstacles into the system. Since the beginning of this project, it was decided that path finding would play a major roll in having the robot cars figure out fast and efficient paths through moving and non-moving obstacles. Due to time constraints and limited space, only static obstacles were used. In addition, the equipment hadn't arrived for room scanning to be readily available, thus a measuring tape was used to help guess the dimensions and avoidance boundaries of these obstacles.
 	\\
 	These tests were broken up into two main categories, Test - 3A for a convex obstacle, and Test - 3B for a concave obstacle.
 	
-	\subsubsection{Test 3 - A}
+	\subsubsection*{Test 3 - A}
 	This pattern flows around a central obstacle. The first section is single direction, the second is bidirectional. (figure\ref{fig:convex_travesal})
 		\begin{figure}
 			\centering
@@ -152,7 +152,7 @@
 			\caption{Traversal pattern for Test 3A}
 			\label{fig:convex_travesal}
 		\end{figure}
-	\subsubsection{Test 3 - B}
+	\subsubsection*{Test 3 - B}
 	This pattern uses the A* search in a more complex manner, it travels around the corner of the L shape and to the destination, the second destination is ordering it to end up back where it started.(figure\ref{fig:concave_travesal})
 		\begin{figure}
 			\centering
@@ -163,7 +163,45 @@
 	
 	
 	\section*{Data Analysis}
-	TODO: collect data from moving vehicles, comparing them between the simulation and the actual physical model.
+	Although the tests are broken into 3 sections, we'll only analyze Test section 1 for the comparison data, and sections 2 and 3 will be taking a look at just the behavioral aspects.
+	
+	This is done because the way point system wasn't set up for the Unity simulation, and neither were the obstacle system. These would've been trivial to do, but due to time constraints, the focus was shifted towards the VR controlled physical system instead.
+	
+	\subsection*{Visualized Results for Test Section 1}
+	In figure \ref{fig:vis_comp_t1_1}, the motion vectors recorded in the log file is parsed and sorted into a csv file for graphing and visualizing. Unity supports debug drawing, so that API was used to draw the vectors in the game editor. The lines don't represent each delta time, which could be represented with various lengths if distance deltas were taken, but that feature was skipped for this portion due to time constraints.
+	\\
+	The visual comparison of test 1 - 1 shows a relatively accurate movement system. Where the Unity model on the right used in game floating point, rigid body physics, whereas the the model on the left represents the actual path traversed in Ruben's kitchen. The path of the VR robot car differers in the sense that rotation and maneuver could not be done simultaneously since it is the difference in rotation speed on the wheel motors that cause the turn. This was an oversight on the design of the API and control system of the Unity model, but nonetheless achieved a contrast of what game logic can do for both models.
+	\\
+	The 'fanning pattern can be seen in both, but more visible in the orange VR version. The robot car had crossed a specified threshold, thus causing to stop and rotate to an acceptable degree separation threshold from its target. The robot then was instructed to continue moving forward. All the operator had to do in this test was mark the four corners of the blue square, and both of these robots would attempt to reach each way point.
+	\\
+	On a high level note, this presents a way for robots to achieve various tasks using in game logic to model real world goals and heuristics. For example, if this were a package delivery service in a building, this car would have little trouble reaching its destination unless it had some serious obstructions.
+
+		\begin{figure}
+			\centering
+			\includegraphics[width=.6\textwidth]{car_motion_vector_T1_1.png}
+			\caption{Motion vectors for test 1 - 1}
+			\label{fig:vis_comp_t1_1}
+		\end{figure}
+	In figure \ref{fig:vis_comp_t1_2}, the N shape was used for traversal. Each point on the path was sent to the robot one by one until it reached the position. This was done a couple of times to see how the robot would traverse on the way back.
+		\begin{figure}
+			\centering
+			\includegraphics[width=.6\textwidth]{car_motion_vector_T1_2.png}
+			\caption{Motion vectors for test 1 - 2, the N shape was traversed multiple times, producing an X like pattern instead}
+			\label{fig:vis_comp_t1_2}
+		\end{figure}
+	In the last section of our clean paths test was the back and forth traversal in figure \ref{fig:vis_comp_t1_3}.
+		\begin{figure}
+			\centering
+			\includegraphics[width=.6\textwidth]{car_motion_vector_T1_3.png}
+			\caption{The back and forth path. The green straight line in the corner of the car is from the initialization of the system.}
+			\label{fig:vis_comp_t1_3}
+		\end{figure}
+	\subsection*{Graphed Results for Test 1}
+	
+	\subsection*{Way point Results for Test 2}
+	
+	\subsection*{Obstacle avoidance, A* search Results for Test 3}
+	
 	
 	\section*{Conclusion}
 	TODO: Summarize what actually happened, how well the system behave, performance measures in terms of response time.
