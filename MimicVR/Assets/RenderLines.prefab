@@ -1,0 +1,612 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1726996029516132}
+  m_IsPrefabParent: 1
+--- !u!1 &1726996029516132
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4699230119357110}
+  - component: {fileID: 114661802789805788}
+  m_Layer: 0
+  m_Name: RenderLines
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4699230119357110
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1726996029516132}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.25548995, y: -0.38664436, z: 0.26482803}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114661802789805788
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1726996029516132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0baf0c12c9f9dc45be3378652f6e48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  simText: {fileID: 4900000, guid: 35e107cb3d8d9c54f86ec65609677566, type: 3}
+  vrText: {fileID: 4900000, guid: 6214082e3cc0d054caa52b0a95a44940, type: 3}
+  simData:
+    data:
+    - robot_sim:
+        position: {x: -3.477535, y: 0.5750451, z: 0.1453732}
+        direction: {x: -0.0004821657, y: 102.6478, z: -0.002089913}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.474205, y: 0.5750111, z: 0.1455022}
+        direction: {x: 0.004909576, y: 102.8939, z: -0.0003205211}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.469925, y: 0.5750453, z: 0.1456857}
+        direction: {x: -0.0006151807, y: 103.1722, z: -0.002126335}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.458819, y: 0.5750386, z: 0.1459639}
+        direction: {x: 0.002440129, y: 103.4682, z: -0.001066097}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.455841, y: 0.5750123, z: 0.1460791}
+        direction: {x: 0.005767238, y: 103.6866, z: -0.0001799244}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.445564, y: 0.5750454, z: 0.1463152}
+        direction: {x: -0.0004400692, y: 103.9738, z: -0.002231646}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.440027, y: 0.575045, z: 0.1464599}
+        direction: {x: 0.001630361, y: 104.231, z: -0.002945683}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.437753, y: 0.5750126, z: 0.1465424}
+        direction: {x: 0.006028846, y: 104.4386, z: -0.00009842013}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.435945, y: 0.5750104, z: 0.1466082}
+        direction: {x: 0.004764545, y: 104.6345, z: -0.0001242935}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.43298, y: 0.5750114, z: 0.1467378}
+        direction: {x: 0.00528909, y: 104.8936, z: -0.0001841521}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.429854, y: 0.5750322, z: 0.1468743}
+        direction: {x: 0.01603443, y: 105.1531, z: 0.0007976714}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.426819, y: 0.5750446, z: 0.1470104}
+        direction: {x: 0.004795381, y: 105.413, z: -0.003692556}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.424233, y: 0.5750422, z: 0.1471099}
+        direction: {x: 0.007567209, y: 105.6414, z: -0.002917667}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.418033, y: 0.5750101, z: 0.1472832}
+        direction: {x: 0.004880788, y: 105.9032, z: 0.00005346841}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.41573, y: 0.5750359, z: 0.147381}
+        direction: {x: 0.01298989, y: 106.1543, z: -0.001427712}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.406094, y: 0.5750346, z: 0.1476875}
+        direction: {x: 0.01319841, y: 106.5217, z: -0.002300704}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.402918, y: 0.5750099, z: 0.1478371}
+        direction: {x: 0.004952736, y: 106.8018, z: 0.0001867055}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.400029, y: 0.5750451, z: 0.1479795}
+        direction: {x: 0.0007658385, y: 107.0888, z: -0.002711902}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.395011, y: 0.575037, z: 0.1481326}
+        direction: {x: 0.005369304, y: 107.3578, z: -0.00194597}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.386673, y: 0.575045, z: 0.148371}
+        direction: {x: 0.0003511327, y: 107.6831, z: -0.002657741}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.379715, y: 0.5750451, z: 0.1485993}
+        direction: {x: 0.001113935, y: 108.0097, z: -0.002941194}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.376841, y: 0.575016, z: 0.1487094}
+        direction: {x: 0.008120075, y: 108.2703, z: 0.0003727918}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.374773, y: 0.5750448, z: 0.148797}
+        direction: {x: 0.004263071, y: 108.5249, z: -0.003909755}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.367247, y: 0.5750098, z: 0.149033}
+        direction: {x: 0.005144821, y: 108.8708, z: 0.0004562747}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.361052, y: 0.5750145, z: 0.1492768}
+        direction: {x: 0.007779478, y: 109.2321, z: 0.0004824259}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.358745, y: 0.5750451, z: 0.1493854}
+        direction: {x: 0.001915888, y: 109.503, z: -0.003480974}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.347694, y: 0.5750455, z: 0.149708}
+        direction: {x: 0.000546811, y: 109.9258, z: -0.00292339}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.339809, y: 0.5750452, z: 0.1499379}
+        direction: {x: 0.0009139607, y: 110.2832, z: -0.003057444}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.336393, y: 0.5750217, z: 0.1500821}
+        direction: {x: 0.01173404, y: 110.5943, z: 0.001151161}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.334657, y: 0.5750411, z: 0.1501473}
+        direction: {x: 0.01098126, y: 110.8369, z: -0.001361727}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.33277, y: 0.5750442, z: 0.1502265}
+        direction: {x: 0.005426424, y: 111.0809, z: -0.00400892}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.328736, y: 0.5750126, z: 0.1503856}
+        direction: {x: 0.00739959, y: 111.3807, z: 0.0005068023}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.324982, y: 0.5750093, z: 0.1505628}
+        direction: {x: 0.005328145, y: 111.7474, z: 0.0009159609}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.322914, y: 0.5750337, z: 0.1506242}
+        direction: {x: 0.01636902, y: 111.9955, z: 0.003296888}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.317605, y: 0.5750448, z: 0.1508561}
+        direction: {x: 0.003573445, y: 112.414, z: -0.004262433}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.295908, y: 0.5750452, z: 0.1512636}
+        direction: {x: 0.0007822098, y: 112.982, z: -0.003217827}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.244782, y: 0.5750289, z: 0.1453314}
+        direction: {x: 359.9872, y: 113.3746, z: 0.01251848}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.156751, y: 0.5750312, z: 0.1084854}
+        direction: {x: 359.9854, y: 113.4215, z: 0.01723323}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -3.02601, y: 0.5750314, z: 0.04931376}
+        direction: {x: 359.9852, y: 113.4571, z: 0.0176712}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -2.851851, y: 0.5750315, z: -0.0304228}
+        direction: {x: 359.9852, y: 113.4913, z: 0.01775408}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -2.634165, y: 0.5750315, z: -0.1304574}
+        direction: {x: 359.9852, y: 113.5252, z: 0.0177718}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -2.372934, y: 0.5750315, z: -0.2507474}
+        direction: {x: 359.9852, y: 113.5592, z: 0.01777428}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -2.10405, y: 0.5750304, z: -0.3782703}
+        direction: {x: 359.9935, y: 128.7464, z: 0.00558849}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.853908, y: 0.5750031, z: -0.529783}
+        direction: {x: 0.001376183, y: 156.9503, z: 0.000605246}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 1.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.671075, y: 0.5750286, z: -0.6457066}
+        direction: {x: 0.0007070447, y: 231.2309, z: 0.04269125}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 1.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.624281, y: 0.575008, z: -0.6925142}
+        direction: {x: -0.001466232, y: 290.6333, z: 0.02231694}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, -1.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.668795, y: 0.5750325, z: -0.6925746}
+        direction: {x: 359.9883, y: 278.2122, z: 0.01010035}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.713573, y: 0.5750013, z: -0.6875302}
+        direction: {x: -0.0001484239, y: 277.7485, z: -0.00001973301}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, -1.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.721637, y: 0.5749997, z: -0.6871919}
+        direction: {x: -0.0001724682, y: 275.1336, z: 0.00009462434}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 1.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.721965, y: 0.5749992, z: -0.6871894}
+        direction: {x: -0.0007788374, y: 274.192, z: 0.0003451777}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 1.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.721928, y: 0.5749997, z: -0.6872028}
+        direction: {x: -0.0003576995, y: 274.5237, z: 0.0002559026}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 1.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.72183, y: 0.5750005, z: -0.6868832}
+        direction: {x: 0.0003402781, y: 282.5688, z: -0.00008380861}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 1.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.72864, y: 0.5750237, z: -0.6842833}
+        direction: {x: 359.9803, y: 298.6702, z: 0.03202479}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.742474, y: 0.5750303, z: -0.6834421}
+        direction: {x: 0.01695521, y: 301.691, z: 0.008415521}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.743153, y: 0.5750521, z: -0.6833138}
+        direction: {x: 0.01802489, y: 301.775, z: 0.006989806}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.743917, y: 0.5750074, z: -0.6832116}
+        direction: {x: 0.004478564, y: 301.8738, z: 0.002002164}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.744546, y: 0.5750293, z: -0.6830973}
+        direction: {x: 0.01611553, y: 301.9432, z: 0.008639434}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.745049, y: 0.575013, z: -0.6830076}
+        direction: {x: 0.006567244, y: 301.9968, z: 0.001986121}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.745772, y: 0.5750074, z: -0.682906}
+        direction: {x: 0.004515916, y: 302.0844, z: 0.002067697}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.746392, y: 0.5750314, z: -0.6827981}
+        direction: {x: 0.0173306, y: 302.1481, z: 0.008672957}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.746772, y: 0.5750538, z: -0.6827081}
+        direction: {x: 0.01848738, y: 302.1808, z: 0.007708591}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.74744, y: 0.5750517, z: -0.6826125}
+        direction: {x: 0.01881348, y: 302.2549, z: 0.00831835}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.748006, y: 0.5750301, z: -0.6825309}
+        direction: {x: 0.01676393, y: 302.3148, z: 0.008612887}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.748399, y: 0.575013, z: -0.6824285}
+        direction: {x: 0.006700011, y: 302.3488, z: 0.002718967}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.748827, y: 0.5750446, z: -0.6823247}
+        direction: {x: 0.02071523, y: 302.3823, z: 0.01135136}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.749379, y: 0.5750134, z: -0.6821963}
+        direction: {x: 0.006848485, y: 302.447, z: 0.002732926}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.749878, y: 0.5750133, z: -0.6820946}
+        direction: {x: 0.006563208, y: 302.4929, z: 0.002147088}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.753927, y: 0.575048, z: -0.6821257}
+        direction: {x: 0.004443512, y: 303.0894, z: -0.003479502}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.762644, y: 0.5750447, z: -0.6822966}
+        direction: {x: 0.009283835, y: 304.4455, z: 0.001419968}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.771957, y: 0.5750543, z: -0.6823484}
+        direction: {x: 0.006311638, y: 306.1467, z: -0.0004056008}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.783546, y: 0.5750586, z: -0.6820931}
+        direction: {x: 0.008217773, y: 308.1537, z: 0.0006266719}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.793652, y: 0.5750611, z: -0.6814472}
+        direction: {x: 0.007982711, y: 308.8647, z: 0.001788279}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.798011, y: 0.5750448, z: -0.6807014}
+        direction: {x: 0.0210373, y: 308.8879, z: 0.01416933}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.798466, y: 0.5750473, z: -0.6805035}
+        direction: {x: 0.02174418, y: 308.9157, z: 0.01427563}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.798949, y: 0.5750461, z: -0.680291}
+        direction: {x: 0.02138809, y: 308.9454, z: 0.01424199}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.79943, y: 0.5750461, z: -0.680079}
+        direction: {x: 0.0213804, y: 308.9753, z: 0.01424626}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.799912, y: 0.5750461, z: -0.6798667}
+        direction: {x: 0.02137424, y: 309.0052, z: 0.0142533}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.800394, y: 0.5750461, z: -0.6796547}
+        direction: {x: 0.02136361, y: 309.0352, z: 0.01425735}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.800849, y: 0.5750474, z: -0.6794625}
+        direction: {x: 0.02174437, y: 309.0633, z: 0.01430864}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.801331, y: 0.5750461, z: -0.6792513}
+        direction: {x: 0.02134101, y: 309.0934, z: 0.01426537}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.801813, y: 0.5750461, z: -0.6790417}
+        direction: {x: 0.02134003, y: 309.1238, z: 0.01427864}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.805884, y: 0.5750607, z: -0.6784711}
+        direction: {x: 0.008678331, y: 309.0791, z: 0.001249844}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.809378, y: 0.5750923, z: -0.6780772}
+        direction: {x: 0.0113457, y: 308.7246, z: 0.01739882}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.816691, y: 0.5750633, z: -0.6762748}
+        direction: {x: 0.008784711, y: 308.7089, z: 0.00218024}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_sim:
+        position: {x: -1.822958, y: 0.5750586, z: -0.6757467}
+        direction: {x: 0.003749804, y: 308.5143, z: -0.0001830322}
+        command: 'move: (0.0, 0.0, 1.0)  rotate: (0.0, 0.0, 0.0)'
+  vrData:
+    data:
+    - robot_vr:
+        position: {x: -0.03887463, y: 0.6107795, z: 0.02167439}
+        direction: {x: -0.00008784358, y: 0.01000977, z: 0.005013568}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.03887463, y: 0.6107795, z: 0.02167439}
+        direction: {x: -0.00008784358, y: 0.01000977, z: 0.005013568}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.03883398, y: 0.6105132, z: 0.02171671}
+        direction: {x: 359.9921, y: 0.008676242, z: 0.004948603}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.048823, y: 0.6109262, z: 0.02593225}
+        direction: {x: 0.2046902, y: 351.8554, z: 0.1595876}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.05685806, y: 0.6101035, z: 0.03367674}
+        direction: {x: 0.7597666, y: 345.486, z: 0.5240589}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.0632242, y: 0.6095356, z: 0.03946662}
+        direction: {x: 1.158564, y: 340.4078, z: 0.3544286}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.06918097, y: 0.6074545, z: 0.04526621}
+        direction: {x: 1.027601, y: 334.3987, z: 0.6224906}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.08161426, y: 0.6105515, z: 0.04878908}
+        direction: {x: 1.38577, y: 327.127, z: 0.6579269}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.0917865, y: 0.6105955, z: 0.05307615}
+        direction: {x: 1.836934, y: 320.4156, z: 0.3860847}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1033214, y: 0.6094865, z: 0.0561235}
+        direction: {x: 2.415263, y: 312.5662, z: 0.09095266}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1481947, y: 0.6110977, z: 0.101299}
+        direction: {x: 1.19446, y: 314.355, z: 359.7095}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.235497, y: 0.6101093, z: 0.1874775}
+        direction: {x: 2.085903, y: 312.7052, z: 359.7943}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.235497, y: 0.6101093, z: 0.1874775}
+        direction: {x: 2.085903, y: 312.7052, z: 359.7943}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.2648958, y: 0.6097281, z: 0.2541224}
+        direction: {x: 1.936159, y: 336.383, z: 359.8594}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.2643936, y: 0.6104902, z: 0.2583464}
+        direction: {x: 0.8801089, y: 341.4761, z: 0.02388464}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.2815707, y: 0.612807, z: 0.2944688}
+        direction: {x: 1.356145, y: 340.085, z: 0.8002331}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.3214529, y: 0.6190737, z: 0.4018468}
+        direction: {x: 0.8009885, y: 339.202, z: 0.09033811}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.3670422, y: 0.6155826, z: 0.5303007}
+        direction: {x: 1.398604, y: 337.6742, z: 359.943}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.3670422, y: 0.6155826, z: 0.5303007}
+        direction: {x: 1.398604, y: 337.6742, z: 359.943}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.3852839, y: 0.6164349, z: 0.6191694}
+        direction: {x: 0.6696634, y: 353.146, z: 359.6589}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.3644551, y: 0.6167033, z: 0.6380217}
+        direction: {x: 0.6701038, y: 14.96686, z: 359.4929}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.3619775, y: 0.6172137, z: 0.6383879}
+        direction: {x: 0.4513119, y: 16.59356, z: 359.3317}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.3462653, y: 0.6203101, z: 0.6950915}
+        direction: {x: 0.06153426, y: 15.24747, z: 359.1171}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.315183, y: 0.6226038, z: 0.8106318}
+        direction: {x: 0.2004076, y: 14.2334, z: 359.4776}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.315183, y: 0.6226038, z: 0.8106318}
+        direction: {x: 0.2004076, y: 14.2334, z: 359.4776}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.2812689, y: 0.6248388, z: 0.930801}
+        direction: {x: 2.384891, y: 15.26353, z: 358.3727}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.2457963, y: 0.627118, z: 0.943386}
+        direction: {x: 0.6366078, y: 45.88247, z: 358.3185}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.2390438, y: 0.6276646, z: 0.9356134}
+        direction: {x: 0.8252652, y: 58.80485, z: 357.8757}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.2390438, y: 0.6276646, z: 0.9356134}
+        direction: {x: 0.8252652, y: 58.80485, z: 357.8757}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.221092, y: 0.6271554, z: 0.9547503}
+        direction: {x: 2.138647, y: 50.70803, z: 357.8779}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.2253498, y: 0.6291314, z: 0.9713551}
+        direction: {x: 0.237238, y: 36.50167, z: 358.4}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1984491, y: 0.6302687, z: 1.009302}
+        direction: {x: 0.3641157, y: 36.21171, z: 358.2712}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1984491, y: 0.6302687, z: 1.009302}
+        direction: {x: 0.3641157, y: 36.21171, z: 358.2712}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.141508, y: 0.6347504, z: 1.056238}
+        direction: {x: 0.1885056, y: 50.26615, z: 357.714}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1292975, y: 0.6339979, z: 1.068932}
+        direction: {x: 0.6970344, y: 53.43441, z: 357.6347}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.12545, y: 0.6352088, z: 1.084484}
+        direction: {x: 0.5293741, y: 44.33002, z: 357.8317}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1172161, y: 0.6344845, z: 1.080246}
+        direction: {x: 0.5574518, y: 52.90019, z: 357.6636}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.123706, y: 0.63455, z: 1.086605}
+        direction: {x: 0.4909011, y: 47.05192, z: 357.5992}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1241719, y: 0.6355717, z: 1.098712}
+        direction: {x: 0.4668217, y: 39.40968, z: 358.0685}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1158826, y: 0.6354545, z: 1.092468}
+        direction: {x: 0.427738, y: 49.02183, z: 357.8301}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1226033, y: 0.6357253, z: 1.097611}
+        direction: {x: 0.39667, y: 43.64724, z: 357.8343}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.115029, y: 0.6351491, z: 1.089787}
+        direction: {x: 0.7419489, y: 53.38747, z: 357.736}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1224629, y: 0.6358609, z: 1.097774}
+        direction: {x: 0.4762339, y: 47.08414, z: 357.678}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1148039, y: 0.6363167, z: 1.091451}
+        direction: {x: 0.5545704, y: 55.65899, z: 357.6066}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1207536, y: 0.6364778, z: 1.098503}
+        direction: {x: 0.6305836, y: 49.62394, z: 357.5781}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1200714, y: 0.6365886, z: 1.108897}
+        direction: {x: 0.4916647, y: 42.88321, z: 357.8784}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1142696, y: 0.6373308, z: 1.109667}
+        direction: {x: 359.8823, y: 45.43015, z: 357.6626}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.110068, y: 0.6370983, z: 1.097966}
+        direction: {x: 0.8604358, y: 57.37651, z: 357.4836}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1182317, y: 0.6362455, z: 1.100317}
+        direction: {x: 0.7153242, y: 55.54376, z: 357.6897}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1186916, y: 0.6377223, z: 1.108311}
+        direction: {x: 0.2038937, y: 46.50119, z: 357.6857}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1132945, y: 0.6364433, z: 1.112072}
+        direction: {x: 1.191908, y: 45.95868, z: 358.0288}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1083771, y: 0.6372576, z: 1.102114}
+        direction: {x: 0.7361724, y: 57.85775, z: 357.5905}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+    - robot_vr:
+        position: {x: -0.1150419, y: 0.6386598, z: 1.100221}
+        direction: {x: 0.04859905, y: 58.07783, z: 357.8363}
+        command: 'move: (0.0, 0.0, 0.0)  rotate: (0.0, 0.0, 0.0)'
+  reload: 0

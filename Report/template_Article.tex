@@ -197,17 +197,115 @@
 			\label{fig:vis_comp_t1_3}
 		\end{figure}
 	\subsection*{Graphed Results for Test 1}
+	To look at the comparison of motion in a more intuitive manner, the x and z axis were plotted. Since the y axis is only the up and down  values, that was negligible in change, it might be useful in future experiments to measure roughness and friction however.
+	\\
+	In figure \ref{fig:graph_comp_t1_1}, The X axis in the VR can be seen as a little rough compared to the the simulation version. This might be due to the slight offset of rotation at the beginning. Course corrections take more time in the VR model, but the speed overall is faster. 
+	\\
+	The sim model was tuned to be as close as possible, so the graphs do measure up well in the Z axis. These two coordinate potions line up very closely over the duration of the run time. The time slices are in increments of 100 milliseconds, so this test was run over 19 seconds of time.
 	
-	\subsection*{Way point Results for Test 2}
+
+	\begin{figure}
+		\centering
+		\includegraphics[width=.4\textwidth]{Test1_charts/t1_1_x_z.png}
+		\caption{Comparing the data over time for Test 1-1.}
+		\label{fig:graph_comp_t1_1}
+	\end{figure}
+	In figure \ref{fig:graph_comp_t1_2}, the X and Z axis fluctuate a lot over time since the cars are crossing from one end of the room to the other. In general, the simulation seems to be rather smooth with a few dips and spikes, in contrast to the rough physically tracked object. This is in part due to vibrations from the car moving and the sub-millimeter accuracy of the vive.
+	\\
+	\begin{figure}
+		\centering
+		\includegraphics[width=.4\textwidth]{Test1_charts/t1_2_x_z.png}
+		\caption{Comparing the data over time for Test 1-2.}
+		\label{fig:graph_comp_t1_2}
+	\end{figure}
+	The last test for this section appears rather boring, since the X axis hardly changed. But that allows the changes in the Z axis to be much more expressed. Because of limited rotations, the graph shows an  overall smooth transition between top to bottom movements.
 	
+	\begin{figure}
+		\centering
+		\includegraphics[width=.4\textwidth]{Test1_charts/t1_3_x_z.png}
+		\caption{Graphed Test 1-3}
+		\label{fig:graph_comp_t1_3}
+	\end{figure}
+
+
+	\subsection*{Visualized Way point Results for Test 2}
+	\begin{figure}
+		\centering
+		\includegraphics[width=1\textwidth]{Test2_visuals/Test2_mosaic.png}
+		\caption{Visual Tests for section 2, notice the decrease in artifacts due to path planing and no wait times between each stop for the user to input a new route.}
+		\label{fig:vis_comp_t2}
+	\end{figure}
+	In the second phase of testing, the robot car was given way points in a batch navigation system. Upon reaching within approximate distance of the Vive's controller spatial coordinate, the current point would be removed from the queue and allow the car to go to the next way point.
+	\\
+	What was found here, was that the lines become much more clear and precise. This is because the cars did not have to do additional adjustments on rotation upon reaching the destinations. The result seemed most clear in figure \ref{fig:vis_comp_t2} 2-1. The car only turned is it reached its destination and didn't go far off course. The curved paths is mostly due to small artifacts in the floor or on the wheels which made the car veer to the left slightly.
+	\\
+	In 2-2, the paths are nearly mirrored as a clear X path with the car almost treading the same path as it moved from left to right using the diagonal of the room. In 2-3, there are a few more artifacts, this is probably due to the car having to adjust course midway.
 	\subsection*{Obstacle avoidance, A* search Results for Test 3}
+	The final section will deal with how the vehicle handles obstacle avoidance. Ultimately, this will be used as a proof of concept system for how the Vive can fully control and navigate a vehicle in the real world setting.
 	
+	\begin{figure}
+		\centering
+		\includegraphics[width=.6\textwidth]{box_setup.jpg}
+		\caption{Jimmy Kim setting up a box for the robot to steer around. The cat also seems interested in showing his obstacle avoidance skills.}
+		\label{fig:photo_jimmy_box}
+	\end{figure}
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=1\textwidth]{Test3_Visuals/Test3a_mosaic.png}
+		\caption{Virtualized version of test 3a.}
+		\label{fig:vis_comp_t3a}
+	\end{figure}
+
+	For this test, a single box was used to simulate obstacle avoidance. Although no exact measurements were taken, an approximation was made as to how big the box was, how far it was from the robot, and the robots size, all from a measuring tape.
+	\\
+	This also opens up some opportunities for future work to allow a certain 3D scanning system to be used to actually build the environment along with its polygon collision mesh on the fly.
+	\\
+	Starting with 3A-1, the test was simple. It deals with moving the car from one place to another, but with the box right in the middle. Moving it in a single direction was achieved relatively quick, the robot utilizes Unity's navigation mesh, and way point planning system to navigate safely around the obstacle.
+	\\
+	3A-2 is where things started to get more interesting. The pattern here was to navigate around the box and back to its original starting point. This became tricky, even with Unity's planning algorithm. The car was assigned a bounding volume where the planning algorithm would account for, however, the planning algorithm could not plan for the velocity of the car as it would under controlled game simulation circumstances. Theoretically, this could be remedied by sampling and predicting the next time step's velocity, but that would require extensive work to overhaul the existing route planning algorithm built into the game engine.
+	\\
+	This behavior led to a few failed attempts, one of which can be seen in 3A-2 where the car would crash into the box due to misjudgment of distance and safety distance from the obstacle.
+	\\
+	After tweaking a few parameters, and making better measurements of the box's size and distance, the collision was avoided, and a successful pass was made.
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=.6\textwidth]{wall_setup.jpg}
+		\caption{The L shape setup. How is the robot going to get out of this one?}
+		\label{fig:photo_fort}
+	\end{figure}
+	
+	For this next section, test 3b, a more realistic scenario of how this navigation system would work was put in place. Two elongated boxes to simulate walls. Ideally this could be a maze, or a room where the robot would need to figure out how to escape from. Due to spatial and resource constraints, only these two monitor boxes were used to test out this feature. One of them even had a monitor in it, just something to raise the stakes, and entice the quality of this experiment.
+	
+	\begin{figure}
+		\centering
+		\includegraphics[width=.8\textwidth]{Test3_Visuals/Test3b_mosaic.png}
+		\caption{Virtualized version of test 3b.}
+		\label{fig:vis_comp_t3b}
+	\end{figure}
+
+	Just to start the experiment with its most basic configuration, a single point on the opposite side of the two walls proved difficult. A similar issue plagued this experiment as it quickly learned that the more complex the system, the more precise the measurements must be. The Unity A* navigation mesh planning algorithm would place any object as close as possible to its allowable threshold in order to minimize the time and cost it took to reach that destination. Also another possible future research idea since the Unity nav mesh system also supports weight assigned 3D surfaces.
+	\\
+	After the measuring tape was brought out, the car began to successfully navigate around. This can be seen first in 3B-1, the robot moving out of its bounds flawlessly without touching any of the edges.
+	\\
+	3B - 2 mirrors the experiment in 3A - 2 where the car was instructed to travel to one end of the room and back to the beginning again. For the majority, the car took the same path back as it went. Occasionally, it would drift slightly farther, and would cause the car to go full circle around the obstacle.
 	
 	\section*{Conclusion}
-	TODO: Summarize what actually happened, how well the system behave, performance measures in terms of response time.
+	The experiment showed what can be accomplished with VR and automated systems. This can lead to a lot of applications where video games can control in house robots, opening up many possibilities for human robot interactions. In addition, a piece of hardware tracked through VR can be used for many other applications, such having robots pick or sort things out around the house using the VR tracking system. Since this system is networked via Bluetooth and some Wi-Fi bridging, its possible for the robots to operate freely through the entire house as long as the VR cameras can see it.
+	\\
+	The advantage VR has over traditional sensor systems is that it is accurate, and can use game logic/technologies/software to actually drive the hardware systems as well. However, in order for this system to fully work, the obstacles, static or dynamic object must be accurately placed with in the environment, or the VR simulation must know their exact positions or dimensions(or as close as possible).
+	\\
+	The additional tracking can be done further using a stereoscopic, or parallax base scanning system which will be discussed further in the future work section.
 	
 	\section*{Future work}
-	TODO: work on this in the future!
+	This project turned out to be a good proof of concept for an application for VR outside of the traditional 3D rendered domain. A lot can be approved upon it. The most important aspect is the scanning of the play area. 
+	\\
+	One of the very first proposals of augmenting VR technology with robotics is to create a mimicking robot. One that would duplicate the User's actions. In a way this was accomplished, but at perhaps the most basic level. Even just as a car, it could do so much with a simple system.
+	\\
+	The next step would be to integrate the inverse kinematics system. Problem solving in 3 dimensions instead of two, which the robot car accomplished. IK, is usually used in solving joint or bone orientations in 3D space such that a given end point can reach its intended target. Thus, instead of a person playing VR by himself, a robot companion in real life could interact with this person further enhancing the experience.
+	\\
+	The idea of having robots mimic human beings do much more that the monkey-see-monkey-do analogy. It new opens pathways to machine learning that has yet to be exploited. With relatively cheap and highly accurate motion capture technology, an entire robot could be trained to have more human like behaviors, subtle movements learned by simply mimicking. Neural networks using full body motion captures to train themselves to behave more human like. This would be the future vision of the Mimic VR.
 	
 	\section*{REFERENCES}
 	\begin{thebibliography}{99}
