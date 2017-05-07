@@ -1,0 +1,423 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.5.8)  3 MAY 2017 03:28
+entering extended mode
+**./template_Article.tex
+(template_Article.tex
+LaTeX2e <2015/10/01> patch level 2
+Babel <3.9n> and hyphenation patterns for 69 languages loaded.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size10.clo"
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\latin1.def"
+File: latin1.def 2015/03/17 v1.2c Input encoding file
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen103
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen104
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count87
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count88
+\leftroot@=\count89
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count90
+\DOTSCASE@=\count91
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count92
+\c@MaxMatrixCols=\count93
+\dotsspace@=\muskip10
+\c@parentequation=\count94
+\dspbrk@lvl=\count95
+\tag@help=\toks17
+\row@=\count96
+\column@=\count97
+\maxfields@=\count98
+\andhelp@=\toks18
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\makeidx.sty"
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 94.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count99
+))
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count100
+\Gm@cntv=\count101
+\c@Gm@tempcnt=\count102
+\Gm@bindingoffset=\dimen114
+\Gm@wd@mp=\dimen115
+\Gm@odd@mp=\dimen116
+\Gm@even@mp=\dimen117
+\Gm@layoutwidth=\dimen118
+\Gm@layoutheight=\dimen119
+\Gm@layouthoffset=\dimen120
+\Gm@layoutvoffset=\dimen121
+\Gm@dimlist=\toks22
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.cfg"))
+(template_Article.aux)
+\openout1 = `template_Article.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count103
+\scratchdimen=\dimen122
+\scratchbox=\box28
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks23
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen123
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks24
+)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(56.9055pt, 483.69684pt, 56.90553pt)
+* v-part:(T,H,B)=(56.9055pt, 731.23582pt, 56.90552pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=483.69684pt
+* \textheight=731.23582pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Try loading font information for U+msa on input line 27.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 27.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \hbox (badness 10000) in paragraph at lines 40--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--47
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 49--54
+
+ []
+
+[1
+
+{K:/Users/Ruben/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<AwesomeDrawing.png, id=10, 816.04875pt x 465.99094pt>
+File: AwesomeDrawing.png Graphic file (type png)
+
+<use AwesomeDrawing.png>
+Package pdftex.def Info: AwesomeDrawing.png used on input line 57.
+(pdftex.def)             Requested size: 483.69684pt x 276.21214pt.
+ <robot-rivalry.png, id=11, 511.9125pt x 285.31593pt>
+File: robot-rivalry.png Graphic file (type png)
+
+<use robot-rivalry.png>
+Package pdftex.def Info: robot-rivalry.png used on input line 72.
+(pdftex.def)             Requested size: 193.47577pt x 107.83344pt.
+ [2 <./AwesomeDrawing.png>]
+<robotv1.jpg, id=16, 4111.36pt x 2168.1pt>
+File: robotv1.jpg Graphic file (type jpg)
+ <use robotv1.jpg>
+Package pdftex.def Info: robotv1.jpg used on input line 97.
+(pdftex.def)             Requested size: 290.22105pt x 153.03964pt.
+ [3 <./robot-rivalry.png>] <Network_pipline.png, id=21, 722.7pt x 722.7pt>
+File: Network_pipline.png Graphic file (type png)
+
+<use Network_pipline.png>
+Package pdftex.def Info: Network_pipline.png used on input line 108.
+(pdftex.def)             Requested size: 290.22105pt x 290.22173pt.
+ <robotv2.jpg, id=22, 4111.36pt x 2168.1pt>
+File: robotv2.jpg Graphic file (type jpg)
+
+<use robotv2.jpg>
+Package pdftex.def Info: robotv2.jpg used on input line 117.
+(pdftex.def)             Requested size: 290.22105pt x 153.03964pt.
+ [4 <./robotv1.jpg>] [5 <./Network_pipline.png> <./robotv2.jpg>] <basic_travers
+al.jpg, id=29, 591.71063pt x 259.7203pt>
+File: basic_traversal.jpg Graphic file (type jpg)
+
+<use basic_traversal.jpg>
+Package pdftex.def Info: basic_traversal.jpg used on input line 134.
+(pdftex.def)             Requested size: 290.22105pt x 127.39087pt.
+
+<convex_traversals.jpg, id=30, 418.56375pt x 291.33844pt>
+File: convex_traversals.jpg Graphic file (type jpg)
+
+<use convex_traversals.jpg>
+Package pdftex.def Info: convex_traversals.jpg used on input line 151.
+(pdftex.def)             Requested size: 290.22105pt x 202.00618pt.
+ [6 <./basic_traversal.jpg>]
+<concave_traversals.jpg, id=34, 527.72156pt x 297.36093pt>
+File: concave_traversals.jpg Graphic file (type jpg)
+
+<use concave_traversals.jpg>
+Package pdftex.def Info: concave_traversals.jpg used on input line 159.
+(pdftex.def)             Requested size: 290.22105pt x 163.53085pt.
+ [7 <./convex_traversals.jpg> <./concave_traversals.jpg>] <car_motion_vector_T1
+_1.png, id=40, 748.29562pt x 421.575pt>
+File: car_motion_vector_T1_1.png Graphic file (type png)
+
+<use car_motion_vector_T1_1.png>
+Package pdftex.def Info: car_motion_vector_T1_1.png used on input line 181.
+(pdftex.def)             Requested size: 290.22105pt x 163.50656pt.
+
+<car_motion_vector_T1_2.png, id=41, 748.29562pt x 465.23813pt>
+File: car_motion_vector_T1_2.png Graphic file (type png)
+
+<use car_motion_vector_T1_2.png>
+Package pdftex.def Info: car_motion_vector_T1_2.png used on input line 188.
+(pdftex.def)             Requested size: 290.22105pt x 180.44118pt.
+
+<car_motion_vector_T1_3.png, id=42, 719.68875pt x 465.99094pt>
+File: car_motion_vector_T1_3.png Graphic file (type png)
+
+<use car_motion_vector_T1_3.png>
+Package pdftex.def Info: car_motion_vector_T1_3.png used on input line 195.
+(pdftex.def)             Requested size: 290.22105pt x 187.92181pt.
+ [8 <./car_motion_vector_T1_1.png> <./car_motion_vector_T1_2.png>]
+<Test1_charts/t1_1_x_z.png, id=48, 504.38437pt x 633.86812pt>
+File: Test1_charts/t1_1_x_z.png Graphic file (type png)
+
+<use Test1_charts/t1_1_x_z.png>
+Package pdftex.def Info: Test1_charts/t1_1_x_z.png used on input line 209.
+(pdftex.def)             Requested size: 193.47577pt x 243.14531pt.
+
+<Test1_charts/t1_2_x_z.png, id=49, 412.54124pt x 506.6428pt>
+File: Test1_charts/t1_2_x_z.png Graphic file (type png)
+
+<use Test1_charts/t1_2_x_z.png>
+Package pdftex.def Info: Test1_charts/t1_2_x_z.png used on input line 217.
+(pdftex.def)             Requested size: 193.47577pt x 237.61192pt.
+
+<Test1_charts/t1_3_x_z.png, id=50, 402.00188pt x 483.30562pt>
+File: Test1_charts/t1_3_x_z.png Graphic file (type png)
+
+<use Test1_charts/t1_3_x_z.png>
+Package pdftex.def Info: Test1_charts/t1_3_x_z.png used on input line 225.
+(pdftex.def)             Requested size: 193.47577pt x 232.60353pt.
+
+<Test2_visuals/Test2_mosaic.png, id=51, 1629.08624pt x 433.62pt>
+File: Test2_visuals/Test2_mosaic.png Graphic file (type png)
+
+<use Test2_visuals/Test2_mosaic.png>
+Package pdftex.def Info: Test2_visuals/Test2_mosaic.png used on input line 234.
+
+(pdftex.def)             Requested size: 483.69684pt x 128.74385pt.
+ [9 <./car_motion_vector_T1_3.png> <./Test1_charts/t1_1_x_z.png>] [10 <./Test1_
+charts/t1_2_x_z.png> <./Test1_charts/t1_3_x_z.png> <./Test2_visuals/Test2_mosai
+c.png>]
+<box_setup.jpg, id=63, 4063.18pt x 3047.385pt>
+File: box_setup.jpg Graphic file (type jpg)
+ <use box_setup.jpg>
+Package pdftex.def Info: box_setup.jpg used on input line 248.
+(pdftex.def)             Requested size: 290.22105pt x 217.66318pt.
+
+<Test3_Visuals/Test3a_mosaic.png, id=64, 1474.00688pt x 409.53pt>
+File: Test3_Visuals/Test3a_mosaic.png Graphic file (type png)
+
+<use Test3_Visuals/Test3a_mosaic.png>
+Package pdftex.def Info: Test3_Visuals/Test3a_mosaic.png used on input line 255
+.
+(pdftex.def)             Requested size: 483.69684pt x 134.38293pt.
+ [11 <./box_setup.jpg> <./Test3_Visuals/Test3a_mosaic.png>] <wall_setup.jpg, id
+=69, 4063.18pt x 3047.385pt>
+File: wall_setup.jpg Graphic file (type jpg)
+
+<use wall_setup.jpg>
+Package pdftex.def Info: wall_setup.jpg used on input line 274.
+(pdftex.def)             Requested size: 290.22105pt x 217.66318pt.
+
+<Test3_Visuals/Test3b_mosaic.png, id=70, 1117.17375pt x 959.08313pt>
+File: Test3_Visuals/Test3b_mosaic.png Graphic file (type png)
+
+<use Test3_Visuals/Test3b_mosaic.png>
+Package pdftex.def Info: Test3_Visuals/Test3b_mosaic.png used on input line 283
+.
+(pdftex.def)             Requested size: 386.95894pt x 332.20114pt.
+
+Overfull \hbox (33.80289pt too wide) in paragraph at lines 295--300
+\OT1/cmr/m/n/10 The ad-van-tage VR has over tra-di-tional sen-sor sys-tems is t
+hat it is ac-cu-rate, and can use game logic/technologies/software
+ []
+
+[12 <./wall_setup.jpg>] [13 <./Test3_Visuals/Test3b_mosaic.png>] [14]
+(template_Article.aux) ) 
+Here is how much of TeX's memory you used:
+ 2774 strings out of 493634
+ 37105 string characters out of 3141315
+ 104452 words of memory out of 3000000
+ 6110 multiletter control sequences out of 15000+200000
+ 12892 words of font info for 50 fonts, out of 3000000 for 9000
+ 1025 hyphenation exceptions out of 8191
+ 27i,6n,28p,1936b,310s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmbx9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+r9.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10
+.pfb>
+Output written on template_Article.pdf (14 pages, 9974704 bytes).
+PDF statistics:
+ 106 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+
